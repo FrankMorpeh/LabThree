@@ -56,7 +56,7 @@ namespace LabTwo.ViewInteractors.Handlers
 
             itsMainWindow.teacherNameTextBox.Text = string.Empty;
             itsMainWindow.teacherAgeTextBox.Text = string.Empty;
-            itsMainWindow.teacherSalaryTextBox.Text = string.Empty;
+            itsMainWindow.teacherPassportTextBox.Text = string.Empty;
             itsMainWindow.teacherInfoPanelHandler = new TeacherInfoPanelHandler(itsMainWindow);
             itsMainWindow.teachersListView.Items.Clear();
 
@@ -65,7 +65,7 @@ namespace LabTwo.ViewInteractors.Handlers
 
             itsMainWindow.engineerNameTextBox.Text = string.Empty;
             itsMainWindow.engineerAgeTextBox.Text = string.Empty;
-            itsMainWindow.engineerSalaryTextBox.Text = string.Empty;
+            itsMainWindow.engineerPassportTextBox.Text = string.Empty;
             itsMainWindow.engineerClassComboBox.SelectedIndex = -1;
             itsMainWindow.engineerInfoPanelHandler = new EngineerInfoPanelHandler(itsMainWindow);
             itsMainWindow.engineerListView.Items.Clear();

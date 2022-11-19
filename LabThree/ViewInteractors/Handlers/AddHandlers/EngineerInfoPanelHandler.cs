@@ -53,11 +53,11 @@ namespace LabTwo.ViewInteractors.Handlers
         public void AddEngineer()
         {
             List<IWarning> warnings = EngineerValidator.CheckEngineer(itsMainWindow.engineerNameTextBox.Text, itsMainWindow.engineerAgeTextBox.Text
-                , itsMainWindow.engineerSalaryTextBox.Text, ((string)itsMainWindow.engineerClassComboBox.SelectedItem));
+                , itsMainWindow.engineerPassportTextBox.Text, ((string)itsMainWindow.engineerClassComboBox.SelectedItem));
             if (warnings.Count == 0)
             {
                 itsEngineerInfoPanelFormStorage.Engineers.Add(EngineerConverter.ToEngineer(itsMainWindow.engineerNameTextBox.Text
-                    , itsMainWindow.engineerAgeTextBox.Text, itsMainWindow.engineerSalaryTextBox.Text
+                    , itsMainWindow.engineerAgeTextBox.Text, itsMainWindow.engineerPassportTextBox.Text
                     , ((string)itsMainWindow.engineerClassComboBox.SelectedItem)));
                 UniversityView.ShowEngineersInfo(itsEngineerInfoPanelFormStorage.Engineers, itsMainWindow.engineerListView);
             }

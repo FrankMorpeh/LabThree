@@ -86,7 +86,7 @@
             this.engineerClassComboBox = new System.Windows.Forms.ComboBox();
             this.addEngineerButton = new System.Windows.Forms.Button();
             this.engineerListView = new System.Windows.Forms.ListView();
-            this.engineerSalaryTextBox = new System.Windows.Forms.TextBox();
+            this.engineerPassportTextBox = new System.Windows.Forms.TextBox();
             this.engineerAgeTextBox = new System.Windows.Forms.TextBox();
             this.engineerNameTextBox = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -100,7 +100,7 @@
             this.addTeacherButton = new System.Windows.Forms.Button();
             this.teachersListView = new System.Windows.Forms.ListView();
             this.addStudentToTeacherButton = new System.Windows.Forms.Button();
-            this.teacherSalaryTextBox = new System.Windows.Forms.TextBox();
+            this.teacherPassportTextBox = new System.Windows.Forms.TextBox();
             this.teacherAgeTextBox = new System.Windows.Forms.TextBox();
             this.teacherNameTextBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -751,7 +751,7 @@
             this.engineerPanel.Controls.Add(this.engineerClassComboBox);
             this.engineerPanel.Controls.Add(this.addEngineerButton);
             this.engineerPanel.Controls.Add(this.engineerListView);
-            this.engineerPanel.Controls.Add(this.engineerSalaryTextBox);
+            this.engineerPanel.Controls.Add(this.engineerPassportTextBox);
             this.engineerPanel.Controls.Add(this.engineerAgeTextBox);
             this.engineerPanel.Controls.Add(this.engineerNameTextBox);
             this.engineerPanel.Controls.Add(this.label20);
@@ -790,12 +790,12 @@
             this.engineerListView.UseCompatibleStateImageBehavior = false;
             this.engineerListView.View = System.Windows.Forms.View.Details;
             // 
-            // engineerSalaryTextBox
+            // engineerPassportTextBox
             // 
-            this.engineerSalaryTextBox.Location = new System.Drawing.Point(138, 131);
-            this.engineerSalaryTextBox.Name = "engineerSalaryTextBox";
-            this.engineerSalaryTextBox.Size = new System.Drawing.Size(125, 27);
-            this.engineerSalaryTextBox.TabIndex = 6;
+            this.engineerPassportTextBox.Location = new System.Drawing.Point(163, 131);
+            this.engineerPassportTextBox.Name = "engineerPassportTextBox";
+            this.engineerPassportTextBox.Size = new System.Drawing.Size(125, 27);
+            this.engineerPassportTextBox.TabIndex = 6;
             // 
             // engineerAgeTextBox
             // 
@@ -827,9 +827,9 @@
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label19.Location = new System.Drawing.Point(50, 125);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 32);
+            this.label19.Size = new System.Drawing.Size(107, 32);
             this.label19.TabIndex = 2;
-            this.label19.Text = "Salary:";
+            this.label19.Text = "Passport:";
             // 
             // label18
             // 
@@ -884,7 +884,7 @@
             this.teachersPanel.Controls.Add(this.addTeacherButton);
             this.teachersPanel.Controls.Add(this.teachersListView);
             this.teachersPanel.Controls.Add(this.addStudentToTeacherButton);
-            this.teachersPanel.Controls.Add(this.teacherSalaryTextBox);
+            this.teachersPanel.Controls.Add(this.teacherPassportTextBox);
             this.teachersPanel.Controls.Add(this.teacherAgeTextBox);
             this.teachersPanel.Controls.Add(this.teacherNameTextBox);
             this.teachersPanel.Controls.Add(this.label16);
@@ -924,12 +924,12 @@
             this.addStudentToTeacherButton.UseVisualStyleBackColor = true;
             this.addStudentToTeacherButton.Click += new System.EventHandler(this.addStudentToTeacherButton_Click);
             // 
-            // teacherSalaryTextBox
+            // teacherPassportTextBox
             // 
-            this.teacherSalaryTextBox.Location = new System.Drawing.Point(151, 136);
-            this.teacherSalaryTextBox.Name = "teacherSalaryTextBox";
-            this.teacherSalaryTextBox.Size = new System.Drawing.Size(137, 27);
-            this.teacherSalaryTextBox.TabIndex = 5;
+            this.teacherPassportTextBox.Location = new System.Drawing.Point(176, 137);
+            this.teacherPassportTextBox.Name = "teacherPassportTextBox";
+            this.teacherPassportTextBox.Size = new System.Drawing.Size(137, 27);
+            this.teacherPassportTextBox.TabIndex = 5;
             // 
             // teacherAgeTextBox
             // 
@@ -951,9 +951,9 @@
             this.label16.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(63, 131);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(82, 32);
+            this.label16.Size = new System.Drawing.Size(107, 32);
             this.label16.TabIndex = 2;
-            this.label16.Text = "Salary:";
+            this.label16.Text = "Passport:";
             // 
             // label15
             // 
@@ -1627,7 +1627,7 @@
         public Panel teachersPanel;
         public ListView teachersListView;
         public Button addStudentToTeacherButton;
-        public TextBox teacherSalaryTextBox;
+        public TextBox teacherPassportTextBox;
         public TextBox teacherAgeTextBox;
         public TextBox teacherNameTextBox;
         public Label label16;
@@ -1638,7 +1638,7 @@
         public ListView studentsOfTeacherListView;
         public Button addTeacherButton;
         public Panel engineerPanel;
-        public TextBox engineerSalaryTextBox;
+        public TextBox engineerPassportTextBox;
         public TextBox engineerAgeTextBox;
         public TextBox engineerNameTextBox;
         public Label label20;

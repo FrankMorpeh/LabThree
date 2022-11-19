@@ -37,11 +37,11 @@ namespace LabTwo.ViewInteractors.Handlers
         public void AddTeacher()
         {
             List<IWarning> warnings = TeacherValidator.CheckTeacher(itsMainWindow.teacherNameTextBox.Text, itsMainWindow.teacherAgeTextBox.Text
-                , itsMainWindow.teacherSalaryTextBox.Text);
+                , itsMainWindow.teacherPassportTextBox.Text);
             if (warnings.Count == 0)
             {
                 itsTeacherInfoPanelFormStorage.Teachers.Add(TeacherConverter.ToTeacher(itsMainWindow.teacherNameTextBox.Text
-                    , itsMainWindow.teacherAgeTextBox.Text, itsMainWindow.teacherSalaryTextBox.Text, itsStudentsOfTeacher));
+                    , itsMainWindow.teacherAgeTextBox.Text, itsMainWindow.teacherPassportTextBox.Text, itsStudentsOfTeacher));
                 UniversityView.ShowTeachersInfo(itsTeacherInfoPanelFormStorage.Teachers, itsMainWindow.teachersListView);
                 itsMainWindow.addStudentToTeacherButton.Enabled = true;
             }
