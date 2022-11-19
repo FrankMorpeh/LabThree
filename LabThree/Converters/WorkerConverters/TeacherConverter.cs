@@ -5,9 +5,9 @@ namespace LabTwo.Converters.WorkerConverters
 {
     public static class TeacherConverter
     {
-        public static Teacher ToTeacher(string name, string age, string salary, List<Student> students)
+        public static Teacher ToTeacher(string name, string age, string passport, List<Student> students)
         {
-            return new Teacher(name, Convert.ToInt32(age), Convert.ToDouble(salary), students);
+            return new Teacher(name, Convert.ToInt32(age), passport, students);
         }
     }
 }

@@ -4,17 +4,17 @@ namespace LabTwo.Models.Workers
 {
     public abstract class Worker : Person
     {
-        protected double itsSalary;
+        protected string itsPassport;
 
-        public double Salary { get { return itsSalary; } set { itsSalary = value; } }
+        public string Passport { get { return itsPassport; } set { itsPassport = value; } }
 
         public Worker()
         {
-            itsSalary = 0.0;
+            itsPassport = string.Empty;
         }
-        public Worker(string name, int age, double salary) : base(name, age)
+        public Worker(string name, int age, string passport) : base(name, age)
         {
-            itsSalary = salary;
+            itsPassport = passport;
         }
     }
 }

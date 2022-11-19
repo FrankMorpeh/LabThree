@@ -5,9 +5,9 @@ namespace LabTwo.Converters.WorkerConverters
 {
     public static class EngineerConverter
     {
-        public static Engineer ToEngineer(string name, string age, string salary, string engineerClass)
+        public static Engineer ToEngineer(string name, string age, string passport, string engineerClass)
         {
-            return new Engineer(name, Convert.ToInt32(age), Convert.ToDouble(salary), ToEngineerClass(engineerClass));
+            return new Engineer(name, Convert.ToInt32(age), passport, ToEngineerClass(engineerClass));
         }
         private static EngineerClass ToEngineerClass(string engineerClass)
         {

@@ -10,7 +10,7 @@
         {
             itsEngineerClass = EngineerClass.Third;
         }
-        public Engineer(string name, int age, double salary, EngineerClass engineerClass) : base(name, age, salary)
+        public Engineer(string name, int age, string passport, EngineerClass engineerClass) : base(name, age, passport)
         {
             itsEngineerClass = engineerClass;
         }
@@ -18,7 +18,7 @@
 
         public bool Equals(Engineer rhs)
         {
-            return itsName == rhs.itsName && itsAge == rhs.itsAge && itsSalary == rhs.itsSalary && itsEngineerClass == rhs.itsEngineerClass;
+            return itsName == rhs.itsName && itsAge == rhs.itsAge && itsPassport == rhs.itsPassport && itsEngineerClass == rhs.itsEngineerClass;
         }
     }
 }

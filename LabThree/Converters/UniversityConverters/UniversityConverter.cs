@@ -14,7 +14,7 @@ namespace LabTwo.Converters.UniversityConverters
             , List<Engineer> engineers, List<Student> students, List<Auditorium> auditoriums)
         {
             return new University(name, Convert.ToInt32(foundationYear), Convert.ToDouble(rank), departments
-                , teachers.Cast<Worker>().Concat(engineers.Cast<Worker>()).ToList(), students
+                , new LabThree.Controllers.WorkerController() { Workers = teachers.Cast<Worker>().Concat(engineers.Cast<Worker>()).ToList() }, students
                 , auditoriums);
         }
     }

@@ -94,9 +94,9 @@
 
         public string Text { get; private set; }
     }
-    public class IncorrectSalary : IWarning
+    public class IncorrectPassport : IWarning
     {
-        public IncorrectSalary() { Text = "Salary must not be less than zero"; }
+        public IncorrectPassport() { Text = "First two symbols of a passport should be letters, and others - digits"; }
 
         public string Text { get; private set; }
     }

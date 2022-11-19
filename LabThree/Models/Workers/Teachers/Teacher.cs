@@ -12,8 +12,8 @@ namespace LabTwo.Models.Workers.Teachers
         {
             itsStudents = null;
         }
-        public Teacher(string name, int age, double salary, List<Student> students) 
-            : base(name, age, salary)
+        public Teacher(string name, int age, string passport, List<Student> students) 
+            : base(name, age, passport)
         {
             itsStudents = students;
         }
@@ -36,7 +36,7 @@ namespace LabTwo.Models.Workers.Teachers
 
         public bool Equals(Teacher rhs)
         {
-            return itsName == rhs.itsName && itsAge == rhs.itsAge && itsSalary == rhs.itsSalary && itsStudents.Equals(rhs);
+            return itsName == rhs.itsName && itsAge == rhs.itsAge && itsPassport == rhs.itsPassport && itsStudents.Equals(rhs);
         }
     }
 }

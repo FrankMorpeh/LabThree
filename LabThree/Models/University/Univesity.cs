@@ -2,6 +2,7 @@
 using LabTwo.Models.Workers;
 using LabTwo.Models.Auditoriums;
 using LabTwo.Models.Departments;
+using LabThree.Controllers;
 
 namespace LabTwo.Models.University
 {
@@ -11,7 +12,7 @@ namespace LabTwo.Models.University
         private int itsFoundationYear;
         private double itsRank;
         private List<Department> itsDepartments;
-        private List<Worker> itsWorkers;
+        private WorkerController itsWorkers;
         private List<Student> itsStudents;
         private List<Auditorium> itsAuditoriums;
 
@@ -19,7 +20,7 @@ namespace LabTwo.Models.University
         public int FoundationYear { get { return itsFoundationYear; } set { itsFoundationYear = value; } }
         public double Rank { get { return itsRank; } set { itsRank = value; } }
         public List<Department> Departments { get { return itsDepartments; } set { itsDepartments = value; } }
-        public List<Worker> Workers { get { return itsWorkers; } set { itsWorkers = value; } }
+        public List<Worker> Workers { get { return itsWorkers.Workers; } set { itsWorkers.Workers = value; } }
         public List<Student> Students { get { return itsStudents; } set { itsStudents = value; } }
         public List<Auditorium> Auditoriums { get { return itsAuditoriums; } set { itsAuditoriums = value; } }
 
@@ -33,7 +34,7 @@ namespace LabTwo.Models.University
             itsStudents = null;
             itsAuditoriums = null;
         }
-        public University(string name, int foundationYear, double rank, List<Department> departments, List<Worker> workers
+        public University(string name, int foundationYear, double rank, List<Department> departments, WorkerController workers
             , List<Student> students, List<Auditorium> auditoriums)
         {
             itsName = name;
@@ -132,7 +133,7 @@ namespace LabTwo.Models.University
         public static University operator+(University lhs, University rhs)
         {
             return new University(lhs.Name + " and " + rhs.Name, 2022, (lhs.Rank + rhs.Rank) / 2
-                , lhs.Departments.Concat(rhs.Departments).ToList(), lhs.Workers.Concat(rhs.Workers).ToList()
+                , lhs.Departments.Concat(rhs.Departments).ToList(), new WorkerController() { Workers = lhs.Workers.Concat(rhs.Workers).ToList() }
                 , lhs.Students.Concat(rhs.Students).ToList(), lhs.Auditoriums.Concat(rhs.Auditoriums).ToList());
         }
     }
