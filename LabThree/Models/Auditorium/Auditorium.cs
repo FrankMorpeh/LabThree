@@ -17,7 +17,7 @@ namespace LabTwo.Models.Auditoriums
         {
             itsCodeName = string.Empty;
             itsCapacity = 0;
-            itsEngineers = null;
+            itsEngineers = new List<Engineer>();
         }
         public Auditorium(string name, int capacity, List<Engineer> engineers)
         {
@@ -41,7 +41,7 @@ namespace LabTwo.Models.Auditoriums
         private string EngineersToString()
         {
             string engineers = string.Empty;
-            if (itsEngineers.Count > 0)
+            if (itsEngineers != null && itsEngineers.Count > 0)
             {
                 for (int i = 0; i < itsEngineers.Count; i++)
                 {

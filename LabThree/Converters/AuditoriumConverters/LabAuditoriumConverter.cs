@@ -5,9 +5,9 @@ namespace LabTwo.Converters.AuditoriumConverters
 {
     public static class LabAuditoriumConverter
     {
-        public static LabAuditorium ToLabAuditorium(string codeName, string capacity, List<Engineer> engineers, string numberOfDevices)
+        public static LabAuditorium ToLabAuditorium(string codeName, string capacity, List<Engineer> engineers, string numberOfDevices, string wifiSpeed)
         {
-            return new LabAuditorium(codeName, Convert.ToInt32(capacity), engineers, Convert.ToInt32(numberOfDevices));
+            return new LabAuditorium(codeName, Convert.ToInt32(capacity), engineers, Convert.ToInt32(numberOfDevices), Convert.ToDouble(wifiSpeed));
         }
     }
 }

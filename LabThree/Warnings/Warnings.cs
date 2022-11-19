@@ -142,4 +142,10 @@
 
         public string Text { get; private set; }
     }
+    public class IncorrectWifiSpeed : IWarning
+    {
+        public IncorrectWifiSpeed() { Text = "Wifi speed must be bigger than zero"; }
+
+        public string Text { get; private set; }
+    }
 }
