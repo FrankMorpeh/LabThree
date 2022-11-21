@@ -5,7 +5,7 @@ namespace LabTwo.Validators.EngineerValidators
 {
     public static class EngineerValidator
     {
-        public static List<IWarning> CheckEngineer(string name, string age, string passport, string engineerClass)
+        public static List<IWarning> CheckEngineer(string name, string age, string passport, string yearsWorking)
         {
             List<IWarning> warnings = new List<IWarning>();
             if (CommonValidator.PersonNameIsValid(name) == false)
@@ -14,8 +14,8 @@ namespace LabTwo.Validators.EngineerValidators
                 warnings.Add(new IncorrectPersonAge());
             if (CommonValidator.WorkerPassportIsValid(passport) == false)
                 warnings.Add(new IncorrectPassport());
-            if (CommonValidator.NameIsEmpty(engineerClass))
-                warnings.Add(new IncorrectEngineerClass());
+            if (CommonValidator.NumberBiggerThanZero(yearsWorking))
+                warnings.Add(new IncorrectYearsWorking());
             return warnings;
         }
         public static List<IWarning> CheckEngineersForAuditorium(List<Engineer> engineers)

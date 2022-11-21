@@ -83,7 +83,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.engineerPanel = new System.Windows.Forms.Panel();
-            this.engineerClassComboBox = new System.Windows.Forms.ComboBox();
+            this.engineerHasCertificateComboBox = new System.Windows.Forms.ComboBox();
             this.addEngineerButton = new System.Windows.Forms.Button();
             this.engineerListView = new System.Windows.Forms.ListView();
             this.engineerPassportTextBox = new System.Windows.Forms.TextBox();
@@ -97,6 +97,10 @@
             this.chooseStudentsOfTeacherButton = new System.Windows.Forms.Button();
             this.studentsOfTeacherListView = new System.Windows.Forms.ListView();
             this.teachersPanel = new System.Windows.Forms.Panel();
+            this.teacherNumberOfScientificWorksTextBox = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.teacherNumberOfSubjectsTextBox = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.addTeacherButton = new System.Windows.Forms.Button();
             this.teachersListView = new System.Windows.Forms.ListView();
             this.addStudentToTeacherButton = new System.Windows.Forms.Button();
@@ -161,6 +165,8 @@
             this.showAuditoriumsOfUniversityButton = new System.Windows.Forms.Button();
             this.showTeachersOfUniversityButton = new System.Windows.Forms.Button();
             this.showDepartmentsOfUniversityButton = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.engineerYearsWorkingTextBox = new System.Windows.Forms.TextBox();
             this.warningPanel3.SuspendLayout();
             this.warningPanel2.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -748,7 +754,9 @@
             // 
             // engineerPanel
             // 
-            this.engineerPanel.Controls.Add(this.engineerClassComboBox);
+            this.engineerPanel.Controls.Add(this.engineerYearsWorkingTextBox);
+            this.engineerPanel.Controls.Add(this.label29);
+            this.engineerPanel.Controls.Add(this.engineerHasCertificateComboBox);
             this.engineerPanel.Controls.Add(this.addEngineerButton);
             this.engineerPanel.Controls.Add(this.engineerListView);
             this.engineerPanel.Controls.Add(this.engineerPassportTextBox);
@@ -763,17 +771,17 @@
             this.engineerPanel.Size = new System.Drawing.Size(624, 443);
             this.engineerPanel.TabIndex = 15;
             // 
-            // engineerClassComboBox
+            // engineerHasCertificateComboBox
             // 
-            this.engineerClassComboBox.FormattingEnabled = true;
-            this.engineerClassComboBox.Location = new System.Drawing.Point(225, 172);
-            this.engineerClassComboBox.Name = "engineerClassComboBox";
-            this.engineerClassComboBox.Size = new System.Drawing.Size(107, 28);
-            this.engineerClassComboBox.TabIndex = 17;
+            this.engineerHasCertificateComboBox.FormattingEnabled = true;
+            this.engineerHasCertificateComboBox.Location = new System.Drawing.Point(224, 140);
+            this.engineerHasCertificateComboBox.Name = "engineerHasCertificateComboBox";
+            this.engineerHasCertificateComboBox.Size = new System.Drawing.Size(107, 28);
+            this.engineerHasCertificateComboBox.TabIndex = 17;
             // 
             // addEngineerButton
             // 
-            this.addEngineerButton.Location = new System.Drawing.Point(56, 221);
+            this.addEngineerButton.Location = new System.Drawing.Point(56, 227);
             this.addEngineerButton.Name = "addEngineerButton";
             this.addEngineerButton.Size = new System.Drawing.Size(130, 39);
             this.addEngineerButton.TabIndex = 16;
@@ -792,21 +800,21 @@
             // 
             // engineerPassportTextBox
             // 
-            this.engineerPassportTextBox.Location = new System.Drawing.Point(163, 131);
+            this.engineerPassportTextBox.Location = new System.Drawing.Point(162, 99);
             this.engineerPassportTextBox.Name = "engineerPassportTextBox";
             this.engineerPassportTextBox.Size = new System.Drawing.Size(125, 27);
             this.engineerPassportTextBox.TabIndex = 6;
             // 
             // engineerAgeTextBox
             // 
-            this.engineerAgeTextBox.Location = new System.Drawing.Point(117, 88);
+            this.engineerAgeTextBox.Location = new System.Drawing.Point(116, 56);
             this.engineerAgeTextBox.Name = "engineerAgeTextBox";
             this.engineerAgeTextBox.Size = new System.Drawing.Size(62, 27);
             this.engineerAgeTextBox.TabIndex = 5;
             // 
             // engineerNameTextBox
             // 
-            this.engineerNameTextBox.Location = new System.Drawing.Point(141, 44);
+            this.engineerNameTextBox.Location = new System.Drawing.Point(140, 12);
             this.engineerNameTextBox.Name = "engineerNameTextBox";
             this.engineerNameTextBox.Size = new System.Drawing.Size(243, 27);
             this.engineerNameTextBox.TabIndex = 4;
@@ -815,17 +823,17 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(50, 168);
+            this.label20.Location = new System.Drawing.Point(49, 136);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(169, 32);
             this.label20.TabIndex = 3;
-            this.label20.Text = "Engineer class:";
+            this.label20.Text = "Has certificate:";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(50, 125);
+            this.label19.Location = new System.Drawing.Point(49, 93);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(107, 32);
             this.label19.TabIndex = 2;
@@ -835,7 +843,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(50, 82);
+            this.label18.Location = new System.Drawing.Point(49, 50);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(61, 32);
             this.label18.TabIndex = 1;
@@ -845,7 +853,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(50, 39);
+            this.label17.Location = new System.Drawing.Point(49, 7);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(83, 32);
             this.label17.TabIndex = 0;
@@ -881,6 +889,10 @@
             // 
             // teachersPanel
             // 
+            this.teachersPanel.Controls.Add(this.teacherNumberOfScientificWorksTextBox);
+            this.teachersPanel.Controls.Add(this.label28);
+            this.teachersPanel.Controls.Add(this.teacherNumberOfSubjectsTextBox);
+            this.teachersPanel.Controls.Add(this.label27);
             this.teachersPanel.Controls.Add(this.addTeacherButton);
             this.teachersPanel.Controls.Add(this.teachersListView);
             this.teachersPanel.Controls.Add(this.addStudentToTeacherButton);
@@ -895,9 +907,43 @@
             this.teachersPanel.Size = new System.Drawing.Size(666, 470);
             this.teachersPanel.TabIndex = 13;
             // 
+            // teacherNumberOfScientificWorksTextBox
+            // 
+            this.teacherNumberOfScientificWorksTextBox.Location = new System.Drawing.Point(377, 192);
+            this.teacherNumberOfScientificWorksTextBox.Name = "teacherNumberOfScientificWorksTextBox";
+            this.teacherNumberOfScientificWorksTextBox.Size = new System.Drawing.Size(59, 27);
+            this.teacherNumberOfScientificWorksTextBox.TabIndex = 20;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label28.Location = new System.Drawing.Point(67, 186);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(304, 32);
+            this.label28.TabIndex = 19;
+            this.label28.Text = "Number of scientific works:";
+            // 
+            // teacherNumberOfSubjectsTextBox
+            // 
+            this.teacherNumberOfSubjectsTextBox.Location = new System.Drawing.Point(302, 153);
+            this.teacherNumberOfSubjectsTextBox.Name = "teacherNumberOfSubjectsTextBox";
+            this.teacherNumberOfSubjectsTextBox.Size = new System.Drawing.Size(59, 27);
+            this.teacherNumberOfSubjectsTextBox.TabIndex = 18;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label27.Location = new System.Drawing.Point(67, 147);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(229, 32);
+            this.label27.TabIndex = 17;
+            this.label27.Text = "Number of subjects:";
+            // 
             // addTeacherButton
             // 
-            this.addTeacherButton.Location = new System.Drawing.Point(63, 240);
+            this.addTeacherButton.Location = new System.Drawing.Point(63, 294);
             this.addTeacherButton.Name = "addTeacherButton";
             this.addTeacherButton.Size = new System.Drawing.Size(120, 58);
             this.addTeacherButton.TabIndex = 16;
@@ -907,16 +953,16 @@
             // 
             // teachersListView
             // 
-            this.teachersListView.Location = new System.Drawing.Point(63, 309);
+            this.teachersListView.Location = new System.Drawing.Point(63, 369);
             this.teachersListView.Name = "teachersListView";
-            this.teachersListView.Size = new System.Drawing.Size(289, 133);
+            this.teachersListView.Size = new System.Drawing.Size(289, 89);
             this.teachersListView.TabIndex = 15;
             this.teachersListView.UseCompatibleStateImageBehavior = false;
             this.teachersListView.View = System.Windows.Forms.View.Details;
             // 
             // addStudentToTeacherButton
             // 
-            this.addStudentToTeacherButton.Location = new System.Drawing.Point(63, 183);
+            this.addStudentToTeacherButton.Location = new System.Drawing.Point(63, 234);
             this.addStudentToTeacherButton.Name = "addStudentToTeacherButton";
             this.addStudentToTeacherButton.Size = new System.Drawing.Size(110, 39);
             this.addStudentToTeacherButton.TabIndex = 14;
@@ -926,21 +972,21 @@
             // 
             // teacherPassportTextBox
             // 
-            this.teacherPassportTextBox.Location = new System.Drawing.Point(176, 137);
+            this.teacherPassportTextBox.Location = new System.Drawing.Point(180, 100);
             this.teacherPassportTextBox.Name = "teacherPassportTextBox";
             this.teacherPassportTextBox.Size = new System.Drawing.Size(137, 27);
             this.teacherPassportTextBox.TabIndex = 5;
             // 
             // teacherAgeTextBox
             // 
-            this.teacherAgeTextBox.Location = new System.Drawing.Point(130, 95);
+            this.teacherAgeTextBox.Location = new System.Drawing.Point(134, 58);
             this.teacherAgeTextBox.Name = "teacherAgeTextBox";
             this.teacherAgeTextBox.Size = new System.Drawing.Size(59, 27);
             this.teacherAgeTextBox.TabIndex = 4;
             // 
             // teacherNameTextBox
             // 
-            this.teacherNameTextBox.Location = new System.Drawing.Point(152, 51);
+            this.teacherNameTextBox.Location = new System.Drawing.Point(156, 14);
             this.teacherNameTextBox.Name = "teacherNameTextBox";
             this.teacherNameTextBox.Size = new System.Drawing.Size(253, 27);
             this.teacherNameTextBox.TabIndex = 3;
@@ -949,7 +995,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(63, 131);
+            this.label16.Location = new System.Drawing.Point(67, 94);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(107, 32);
             this.label16.TabIndex = 2;
@@ -959,7 +1005,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(63, 89);
+            this.label15.Location = new System.Drawing.Point(67, 52);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(61, 32);
             this.label15.TabIndex = 1;
@@ -969,7 +1015,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(63, 45);
+            this.label14.Location = new System.Drawing.Point(67, 8);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(83, 32);
             this.label14.TabIndex = 0;
@@ -1517,6 +1563,23 @@
             this.showDepartmentsOfUniversityButton.UseVisualStyleBackColor = true;
             this.showDepartmentsOfUniversityButton.Click += new System.EventHandler(this.showDepartmentsOfUniversityPanel_Click);
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(49, 179);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(165, 32);
+            this.label29.TabIndex = 18;
+            this.label29.Text = "Years working:";
+            // 
+            // engineerYearsWorkingTextBox
+            // 
+            this.engineerYearsWorkingTextBox.Location = new System.Drawing.Point(216, 185);
+            this.engineerYearsWorkingTextBox.Name = "engineerYearsWorkingTextBox";
+            this.engineerYearsWorkingTextBox.Size = new System.Drawing.Size(62, 27);
+            this.engineerYearsWorkingTextBox.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1647,7 +1710,7 @@
         public Label label17;
         public Button addEngineerButton;
         public ListView engineerListView;
-        public ComboBox engineerClassComboBox;
+        public ComboBox engineerHasCertificateComboBox;
         public Panel auditoriumPanel;
         public Label label23;
         public Label label22;
@@ -1706,5 +1769,11 @@
         public TextBox wifiSpeedTextBox;
         public Label hasProjectorLabel;
         public ComboBox hasProjectorComboBox;
+        public TextBox teacherNumberOfSubjectsTextBox;
+        public Label label27;
+        public TextBox teacherNumberOfScientificWorksTextBox;
+        public Label label28;
+        public TextBox engineerYearsWorkingTextBox;
+        public Label label29;
     }
 }

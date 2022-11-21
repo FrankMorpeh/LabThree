@@ -2,23 +2,28 @@
 {
     public class Engineer : Worker, IEquatable<Engineer>
     {
-        private EngineerClass itsEngineerClass;
+        private bool itsHasEngineerCertificate;
+        private int itsYearsWorking;
         
-        public EngineerClass EngineerClass { get { return itsEngineerClass; } set { itsEngineerClass = value; } }
+        public bool HasEngineerCertificate { get { return itsHasEngineerCertificate; } set { itsHasEngineerCertificate = value; } }
+        public int YearsWorking { get { return itsYearsWorking; } set { itsYearsWorking = value; } }
 
         public Engineer()
         {
-            itsEngineerClass = EngineerClass.Third;
+            itsHasEngineerCertificate = true;
+            itsYearsWorking = 0;
         }
-        public Engineer(string name, int age, string passport, EngineerClass engineerClass) : base(name, age, passport)
+        public Engineer(string name, int age, string passport, bool hasEngineerCertificate, int yearsWorking) : base(name, age, passport)
         {
-            itsEngineerClass = engineerClass;
+            itsHasEngineerCertificate = hasEngineerCertificate;
+            itsYearsWorking = yearsWorking;
         }
 
 
         public bool Equals(Engineer rhs)
         {
-            return itsName == rhs.itsName && itsAge == rhs.itsAge && itsPassport == rhs.itsPassport && itsEngineerClass == rhs.itsEngineerClass;
+            return itsName == rhs.itsName && itsAge == rhs.itsAge && itsPassport == rhs.itsPassport 
+                && itsHasEngineerCertificate == rhs.itsHasEngineerCertificate && itsYearsWorking == rhs.itsYearsWorking;
         }
     }
 }

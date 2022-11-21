@@ -100,9 +100,9 @@
 
         public string Text { get; private set; }
     }
-    public class IncorrectEngineerClass : IWarning
+    public class IncorrectYearsWorking : IWarning
     {
-        public IncorrectEngineerClass() { Text = "You haven't chosen the class of the engineer"; }
+        public IncorrectYearsWorking() { Text = "Working years should be bigger than zero"; }
 
         public string Text { get; private set; }
     }
@@ -145,6 +145,18 @@
     public class IncorrectWifiSpeed : IWarning
     {
         public IncorrectWifiSpeed() { Text = "Wifi speed must be bigger than zero"; }
+
+        public string Text { get; private set; }
+    }
+    public class IncorrectNumberOfSubjects : IWarning
+    {
+        public IncorrectNumberOfSubjects() { Text = "Number of subjects must be bigger than zero"; }
+
+        public string Text { get; private set; }
+    }
+    public class IncorrectNumberOfScientificWorks : IWarning
+    {
+        public IncorrectNumberOfScientificWorks() { Text = "Number of scientific works must be bigger than zero"; }
 
         public string Text { get; private set; }
     }

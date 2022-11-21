@@ -19,6 +19,7 @@ namespace LabTwo.ViewInteractors.Handlers
         {
             itsMainWindow = mainWindow;
             itsTeacherInfoPanelFormStorage = new TeacherInfoPanelFormStorage();
+            itsStudentsOfTeacher = new List<Student>();
             AddColumnsToListView();
         }
         private void AddColumnsToListView()
@@ -27,6 +28,8 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.teachersListView.Columns.Add("Name");
             itsMainWindow.teachersListView.Columns.Add("Age");
             itsMainWindow.teachersListView.Columns.Add("Salary");
+            itsMainWindow.teachersListView.Columns.Add("Subjects' number");
+            itsMainWindow.teachersListView.Columns.Add("Scientific works' number");
         }
 
         public void OnAddStudents(List<Student> students) // called from StudentsOfTeacherInfoPanelHandler
@@ -37,11 +40,13 @@ namespace LabTwo.ViewInteractors.Handlers
         public void AddTeacher()
         {
             List<IWarning> warnings = TeacherValidator.CheckTeacher(itsMainWindow.teacherNameTextBox.Text, itsMainWindow.teacherAgeTextBox.Text
-                , itsMainWindow.teacherPassportTextBox.Text);
+                , itsMainWindow.teacherPassportTextBox.Text, itsMainWindow.teacherNumberOfSubjectsTextBox.Text
+                , itsMainWindow.teacherNumberOfScientificWorksTextBox.Text);
             if (warnings.Count == 0)
             {
                 itsTeacherInfoPanelFormStorage.Teachers.Add(TeacherConverter.ToTeacher(itsMainWindow.teacherNameTextBox.Text
-                    , itsMainWindow.teacherAgeTextBox.Text, itsMainWindow.teacherPassportTextBox.Text, itsStudentsOfTeacher));
+                    , itsMainWindow.teacherAgeTextBox.Text, itsMainWindow.teacherPassportTextBox.Text, itsStudentsOfTeacher
+                    , itsMainWindow.teacherNumberOfSubjectsTextBox.Text, itsMainWindow.teacherNumberOfScientificWorksTextBox.Text));
                 UniversityView.ShowTeachersInfo(itsTeacherInfoPanelFormStorage.Teachers, itsMainWindow.teachersListView);
                 itsMainWindow.addStudentToTeacherButton.Enabled = true;
             }

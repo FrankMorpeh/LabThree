@@ -19,7 +19,7 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow = mainWindow;
             itsEngineerInfoPanelFormStorage = new EngineerInfoPanelFormStorage();
             AddColumnsToListView();
-            AddVariantsToListBox();
+            AddVariantsToComboBox();
         }
         private void AddColumnsToListView()
         {
@@ -27,14 +27,14 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.engineerListView.Columns.Add("Name");
             itsMainWindow.engineerListView.Columns.Add("Age");
             itsMainWindow.engineerListView.Columns.Add("Salary");
-            itsMainWindow.engineerListView.Columns.Add("Engineer class");
+            itsMainWindow.engineerListView.Columns.Add("Has certificate");
+            itsMainWindow.engineerListView.Columns.Add("Years working");
         }
-        private void AddVariantsToListBox()
+        private void AddVariantsToComboBox()
         {
-            itsMainWindow.engineerClassComboBox.Items.Clear();
-            itsMainWindow.engineerClassComboBox.Items.Add("First");
-            itsMainWindow.engineerClassComboBox.Items.Add("Second");
-            itsMainWindow.engineerClassComboBox.Items.Add("Third");
+            itsMainWindow.engineerHasCertificateComboBox.Items.Clear();
+            itsMainWindow.engineerHasCertificateComboBox.Items.Add("true");
+            itsMainWindow.engineerHasCertificateComboBox.Items.Add("false");
         }
 
         public List<Engineer> GetEngineers()
@@ -53,12 +53,12 @@ namespace LabTwo.ViewInteractors.Handlers
         public void AddEngineer()
         {
             List<IWarning> warnings = EngineerValidator.CheckEngineer(itsMainWindow.engineerNameTextBox.Text, itsMainWindow.engineerAgeTextBox.Text
-                , itsMainWindow.engineerPassportTextBox.Text, ((string)itsMainWindow.engineerClassComboBox.SelectedItem));
+                , itsMainWindow.engineerPassportTextBox.Text, ((string)itsMainWindow.engineerHasCertificateComboBox.SelectedItem));
             if (warnings.Count == 0)
             {
                 itsEngineerInfoPanelFormStorage.Engineers.Add(EngineerConverter.ToEngineer(itsMainWindow.engineerNameTextBox.Text
                     , itsMainWindow.engineerAgeTextBox.Text, itsMainWindow.engineerPassportTextBox.Text
-                    , ((string)itsMainWindow.engineerClassComboBox.SelectedItem)));
+                    , ((string)itsMainWindow.engineerHasCertificateComboBox.SelectedItem), itsMainWindow.engineerYearsWorkingTextBox.Text));
                 UniversityView.ShowEngineersInfo(itsEngineerInfoPanelFormStorage.Engineers, itsMainWindow.engineerListView);
             }
             else

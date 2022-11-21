@@ -66,7 +66,7 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.engineerNameTextBox.Text = string.Empty;
             itsMainWindow.engineerAgeTextBox.Text = string.Empty;
             itsMainWindow.engineerPassportTextBox.Text = string.Empty;
-            itsMainWindow.engineerClassComboBox.SelectedIndex = -1;
+            itsMainWindow.engineerHasCertificateComboBox.SelectedIndex = -1;
             itsMainWindow.engineerInfoPanelHandler = new EngineerInfoPanelHandler(itsMainWindow);
             itsMainWindow.engineerListView.Items.Clear();
 

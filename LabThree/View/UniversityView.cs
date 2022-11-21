@@ -56,7 +56,8 @@ namespace LabTwo.View
             foreach (Teacher teacher in teachers)
             {
                 listView.Items.Add(new ListViewItem(new string[] { teacher.Name, Convert.ToString(teacher.Age)
-                        , Convert.ToString(teacher.Passport)}));
+                        , Convert.ToString(teacher.Passport), Convert.ToString(teacher.NumberOfSubjects)
+                        , Convert.ToString(teacher.NumberOfScientificWorks)}));
             }
 
             listView.Refresh();
@@ -89,7 +90,7 @@ namespace LabTwo.View
             foreach (Engineer engineer in engineers)
             {
                 listView.Items.Add(new ListViewItem(new string[] { engineer.Name, Convert.ToString(engineer.Age)
-                    , Convert.ToString(engineer.Passport), engineer.EngineerClass.ToString() }));
+                    , Convert.ToString(engineer.Passport), engineer.HasEngineerCertificate.ToString(), Convert.ToString(engineer.YearsWorking) }));
             }
 
             listView.Refresh();

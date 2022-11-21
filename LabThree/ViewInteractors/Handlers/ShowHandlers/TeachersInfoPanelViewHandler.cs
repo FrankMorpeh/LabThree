@@ -16,9 +16,12 @@ namespace LabTwo.ViewInteractors.Handlers.ShowHandlers
         }
         private void AddColumnsToListView()
         {
+            itsMainWindow.showTeachersListView.Columns.Clear();
             itsMainWindow.showTeachersListView.Columns.Add("Name");
             itsMainWindow.showTeachersListView.Columns.Add("Age");
             itsMainWindow.showTeachersListView.Columns.Add("Salary");
+            itsMainWindow.showTeachersListView.Columns.Add("Subjects' number");
+            itsMainWindow.showTeachersListView.Columns.Add("Scientific works' number");
         }
 
         public Teacher GetChosenTeacher()
