@@ -143,6 +143,7 @@
             this.showUniversityPanel = new System.Windows.Forms.Panel();
             this.showMainInfoAboutUniversityButton = new System.Windows.Forms.Button();
             this.showAuditoriumsPanel = new System.Windows.Forms.Panel();
+            this.changeAuditoriumTypeButton = new System.Windows.Forms.Button();
             this.showAuditorimsListView = new System.Windows.Forms.ListView();
             this.showStudentsOfTeacherPanel = new System.Windows.Forms.Panel();
             this.goBackToShowingTeachersButton = new System.Windows.Forms.Button();
@@ -167,7 +168,7 @@
             this.showAuditoriumsOfUniversityButton = new System.Windows.Forms.Button();
             this.showTeachersOfUniversityButton = new System.Windows.Forms.Button();
             this.showDepartmentsOfUniversityButton = new System.Windows.Forms.Button();
-            this.changeAuditoriumTypeButton = new System.Windows.Forms.Button();
+            this.showTeacherNumberOfPotentialSubjectsButton = new System.Windows.Forms.Button();
             this.warningPanel3.SuspendLayout();
             this.warningPanel2.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -1350,6 +1351,16 @@
             this.showAuditoriumsPanel.Size = new System.Drawing.Size(635, 459);
             this.showAuditoriumsPanel.TabIndex = 12;
             // 
+            // changeAuditoriumTypeButton
+            // 
+            this.changeAuditoriumTypeButton.Location = new System.Drawing.Point(247, 380);
+            this.changeAuditoriumTypeButton.Name = "changeAuditoriumTypeButton";
+            this.changeAuditoriumTypeButton.Size = new System.Drawing.Size(156, 53);
+            this.changeAuditoriumTypeButton.TabIndex = 1;
+            this.changeAuditoriumTypeButton.Text = "Change auditorium type";
+            this.changeAuditoriumTypeButton.UseVisualStyleBackColor = true;
+            this.changeAuditoriumTypeButton.Click += new System.EventHandler(this.changeAuditoriumTypeButton_Click);
+            // 
             // showAuditorimsListView
             // 
             this.showAuditorimsListView.Location = new System.Drawing.Point(57, 27);
@@ -1389,6 +1400,7 @@
             // 
             // showTeacherPanel
             // 
+            this.showTeacherPanel.Controls.Add(this.showTeacherNumberOfPotentialSubjectsButton);
             this.showTeacherPanel.Controls.Add(this.showStudentsButton);
             this.showTeacherPanel.Controls.Add(this.showTeachersListView);
             this.showTeacherPanel.Location = new System.Drawing.Point(233, 40);
@@ -1398,7 +1410,7 @@
             // 
             // showStudentsButton
             // 
-            this.showStudentsButton.Location = new System.Drawing.Point(236, 350);
+            this.showStudentsButton.Location = new System.Drawing.Point(131, 350);
             this.showStudentsButton.Name = "showStudentsButton";
             this.showStudentsButton.Size = new System.Drawing.Size(157, 63);
             this.showStudentsButton.TabIndex = 1;
@@ -1582,15 +1594,15 @@
             this.showDepartmentsOfUniversityButton.UseVisualStyleBackColor = true;
             this.showDepartmentsOfUniversityButton.Click += new System.EventHandler(this.showDepartmentsOfUniversityPanel_Click);
             // 
-            // changeAuditoriumTypeButton
+            // showTeacherNumberOfPotentialSubjectsButton
             // 
-            this.changeAuditoriumTypeButton.Location = new System.Drawing.Point(247, 380);
-            this.changeAuditoriumTypeButton.Name = "changeAuditoriumTypeButton";
-            this.changeAuditoriumTypeButton.Size = new System.Drawing.Size(156, 53);
-            this.changeAuditoriumTypeButton.TabIndex = 1;
-            this.changeAuditoriumTypeButton.Text = "Change auditorium type";
-            this.changeAuditoriumTypeButton.UseVisualStyleBackColor = true;
-            this.changeAuditoriumTypeButton.Click += new System.EventHandler(this.changeAuditoriumTypeButton_Click);
+            this.showTeacherNumberOfPotentialSubjectsButton.Location = new System.Drawing.Point(329, 350);
+            this.showTeacherNumberOfPotentialSubjectsButton.Name = "showTeacherNumberOfPotentialSubjectsButton";
+            this.showTeacherNumberOfPotentialSubjectsButton.Size = new System.Drawing.Size(157, 63);
+            this.showTeacherNumberOfPotentialSubjectsButton.TabIndex = 2;
+            this.showTeacherNumberOfPotentialSubjectsButton.Text = "Number of potential subjects";
+            this.showTeacherNumberOfPotentialSubjectsButton.UseVisualStyleBackColor = true;
+            this.showTeacherNumberOfPotentialSubjectsButton.Click += new System.EventHandler(this.showTeacherNumberOfPotentialSubjectsButton_Click);
             // 
             // Form1
             // 
@@ -1788,5 +1800,6 @@
         public TextBox engineerYearsWorkingTextBox;
         public Label label29;
         public Button changeAuditoriumTypeButton;
+        public Button showTeacherNumberOfPotentialSubjectsButton;
     }
 }

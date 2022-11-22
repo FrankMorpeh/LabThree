@@ -294,5 +294,10 @@ namespace LabTwo
         {
             auditoriumsInfoPanelViewHandler.ChangeAuditoriumType();
         }
+
+        private void showTeacherNumberOfPotentialSubjectsButton_Click(object sender, EventArgs e)
+        {
+            teachersInfoPanelViewHandler.ShowPotentialNumberOfSubjects();
+        }
     }
 }

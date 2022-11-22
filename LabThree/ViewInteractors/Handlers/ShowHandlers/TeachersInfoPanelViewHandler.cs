@@ -50,5 +50,16 @@ namespace LabTwo.ViewInteractors.Handlers.ShowHandlers
             else
                 WarningDisplayer.ShowWarning(itsMainWindow.warningPanel2, itsMainWindow.warningTextBox2, new List<IWarning>() { new TeacherNotChosen() });
         }
+        public void ShowPotentialNumberOfSubjects()
+        {
+            if (itsMainWindow.showTeachersListView.SelectedIndices.Count > 0)
+            {
+                itsMainWindow.warningTextBox2.Text = "The teacher can take " + itsMainWindow.universityToDisplay.
+                GetPotentialNumberOfSubjects(itsMainWindow.showTeachersListView.SelectedIndices[0]) + " more subjects";
+                itsMainWindow.warningPanel2.Show();
+            }
+            else
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel2, itsMainWindow.warningTextBox2, new List<IWarning>() { new TeacherNotChosen() });
+        }
     }
 }

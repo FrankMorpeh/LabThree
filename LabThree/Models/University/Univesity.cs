@@ -3,6 +3,8 @@ using LabTwo.Models.Workers;
 using LabTwo.Models.Auditoriums;
 using LabTwo.Models.Departments;
 using LabThree.Controllers;
+using LabTwo.Models.Workers.Teachers;
+using System.Linq;
 
 namespace LabTwo.Models.University
 {
@@ -86,6 +88,12 @@ namespace LabTwo.Models.University
         private LectureAuditorium ToLectureFromLab(LabAuditorium labAuditorium)
         {
             return new LectureAuditorium("LC", labAuditorium.Capacity, labAuditorium.Engineers, 0, true);
+        }
+
+        // Teachers
+        public int GetPotentialNumberOfSubjects(int teacherIndex)
+        {
+            return 5 - itsWorkers.Workers.OfType<Teacher>().ToList()[teacherIndex].NumberOfSubjects;
         }
 
 

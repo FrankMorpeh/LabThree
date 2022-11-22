@@ -13,11 +13,21 @@ namespace LabTwo.Validators.TeacherValidators
                 warnings.Add(new IncorrectPersonAge());
             if (CommonValidator.WorkerPassportIsValid(passport) == false)
                 warnings.Add(new IncorrectPassport());
-            if (CommonValidator.NumberBiggerThanZero(numberOfSubjects) == false)
+            if (NumberOfSubjectsIsCorrect(numberOfSubjects) == false)
                 warnings.Add(new IncorrectNumberOfSubjects());
             if (CommonValidator.NumberBiggerThanZero(numberOfScientificWorks) == false)
                 warnings.Add(new IncorrectNumberOfScientificWorks());
             return warnings;
+        }
+        private static bool NumberOfSubjectsIsCorrect(string numberOfSubjects)
+        {
+            return CommonValidator.MakeStringConversionCheck(numberOfSubjects, CheckNumberOfSubjects);
+        }
+        private static void CheckNumberOfSubjects(string strNumberOfSubjects, ref bool isValid)
+        {
+            double numberOfSubjects = Convert.ToDouble(strNumberOfSubjects);
+            if (numberOfSubjects < 0 || numberOfSubjects > 5)
+                isValid = false;
         }
     }
 }
