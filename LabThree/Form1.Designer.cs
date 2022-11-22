@@ -83,6 +83,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.engineerPanel = new System.Windows.Forms.Panel();
+            this.engineerYearsWorkingTextBox = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.engineerHasCertificateComboBox = new System.Windows.Forms.ComboBox();
             this.addEngineerButton = new System.Windows.Forms.Button();
             this.engineerListView = new System.Windows.Forms.ListView();
@@ -165,8 +167,7 @@
             this.showAuditoriumsOfUniversityButton = new System.Windows.Forms.Button();
             this.showTeachersOfUniversityButton = new System.Windows.Forms.Button();
             this.showDepartmentsOfUniversityButton = new System.Windows.Forms.Button();
-            this.label29 = new System.Windows.Forms.Label();
-            this.engineerYearsWorkingTextBox = new System.Windows.Forms.TextBox();
+            this.changeAuditoriumTypeButton = new System.Windows.Forms.Button();
             this.warningPanel3.SuspendLayout();
             this.warningPanel2.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -771,6 +772,23 @@
             this.engineerPanel.Size = new System.Drawing.Size(624, 443);
             this.engineerPanel.TabIndex = 15;
             // 
+            // engineerYearsWorkingTextBox
+            // 
+            this.engineerYearsWorkingTextBox.Location = new System.Drawing.Point(216, 185);
+            this.engineerYearsWorkingTextBox.Name = "engineerYearsWorkingTextBox";
+            this.engineerYearsWorkingTextBox.Size = new System.Drawing.Size(62, 27);
+            this.engineerYearsWorkingTextBox.TabIndex = 19;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label29.Location = new System.Drawing.Point(49, 179);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(165, 32);
+            this.label29.TabIndex = 18;
+            this.label29.Text = "Years working:";
+            // 
             // engineerHasCertificateComboBox
             // 
             this.engineerHasCertificateComboBox.FormattingEnabled = true;
@@ -1325,6 +1343,7 @@
             // 
             // showAuditoriumsPanel
             // 
+            this.showAuditoriumsPanel.Controls.Add(this.changeAuditoriumTypeButton);
             this.showAuditoriumsPanel.Controls.Add(this.showAuditorimsListView);
             this.showAuditoriumsPanel.Location = new System.Drawing.Point(210, 32);
             this.showAuditoriumsPanel.Name = "showAuditoriumsPanel";
@@ -1333,7 +1352,7 @@
             // 
             // showAuditorimsListView
             // 
-            this.showAuditorimsListView.Location = new System.Drawing.Point(49, 58);
+            this.showAuditorimsListView.Location = new System.Drawing.Point(57, 27);
             this.showAuditorimsListView.Name = "showAuditorimsListView";
             this.showAuditorimsListView.Size = new System.Drawing.Size(547, 336);
             this.showAuditorimsListView.TabIndex = 0;
@@ -1563,22 +1582,15 @@
             this.showDepartmentsOfUniversityButton.UseVisualStyleBackColor = true;
             this.showDepartmentsOfUniversityButton.Click += new System.EventHandler(this.showDepartmentsOfUniversityPanel_Click);
             // 
-            // label29
+            // changeAuditoriumTypeButton
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label29.Location = new System.Drawing.Point(49, 179);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(165, 32);
-            this.label29.TabIndex = 18;
-            this.label29.Text = "Years working:";
-            // 
-            // engineerYearsWorkingTextBox
-            // 
-            this.engineerYearsWorkingTextBox.Location = new System.Drawing.Point(216, 185);
-            this.engineerYearsWorkingTextBox.Name = "engineerYearsWorkingTextBox";
-            this.engineerYearsWorkingTextBox.Size = new System.Drawing.Size(62, 27);
-            this.engineerYearsWorkingTextBox.TabIndex = 19;
+            this.changeAuditoriumTypeButton.Location = new System.Drawing.Point(247, 380);
+            this.changeAuditoriumTypeButton.Name = "changeAuditoriumTypeButton";
+            this.changeAuditoriumTypeButton.Size = new System.Drawing.Size(156, 53);
+            this.changeAuditoriumTypeButton.TabIndex = 1;
+            this.changeAuditoriumTypeButton.Text = "Change auditorium type";
+            this.changeAuditoriumTypeButton.UseVisualStyleBackColor = true;
+            this.changeAuditoriumTypeButton.Click += new System.EventHandler(this.changeAuditoriumTypeButton_Click);
             // 
             // Form1
             // 
@@ -1775,5 +1787,6 @@
         public Label label28;
         public TextBox engineerYearsWorkingTextBox;
         public Label label29;
+        public Button changeAuditoriumTypeButton;
     }
 }

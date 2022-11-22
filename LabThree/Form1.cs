@@ -289,5 +289,10 @@ namespace LabTwo
             showUniversityPanel.Hide();
             mainPanel.Show();
         }
+
+        private void changeAuditoriumTypeButton_Click(object sender, EventArgs e)
+        {
+            auditoriumsInfoPanelViewHandler.ChangeAuditoriumType();
+        }
     }
 }

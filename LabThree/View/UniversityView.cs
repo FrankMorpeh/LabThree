@@ -127,6 +127,8 @@ namespace LabTwo.View
         }
         public static void ShowAuditoriumsInfo(List<Auditorium> auditoriums, ListView listView)
         {
+            listView.Items.Clear();
+
             foreach (Auditorium auditorium in auditoriums)
             {
                 listView.Items.Add(new ListViewItem(new string[] { auditorium.GetType().Name, auditorium.CodeName

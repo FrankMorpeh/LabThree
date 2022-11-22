@@ -72,6 +72,22 @@ namespace LabTwo.Models.University
         // Auditoriums
         public void AddAuditorium(Auditorium auditorium) { itsAuditoriums.Add(auditorium); }
         public void RemoveAuditoriumAt(int index) { itsAuditoriums.RemoveAt(index); }
+        public void ChangeAuditoriumType(int index) // changes lab to lecture, lecture to lab
+        {
+            if (itsAuditoriums[index] is LectureAuditorium)
+                itsAuditoriums[index] = ToLabFromLecture((LectureAuditorium)itsAuditoriums[index]);
+            else
+                itsAuditoriums[index] = ToLectureFromLab((LabAuditorium)itsAuditoriums[index]);
+        }
+        private LabAuditorium ToLabFromLecture(LectureAuditorium lectureAuditorium)
+        {
+            return new LabAuditorium("Lab", lectureAuditorium.Capacity, lectureAuditorium.Engineers, 0, 0);
+        }
+        private LectureAuditorium ToLectureFromLab(LabAuditorium labAuditorium)
+        {
+            return new LectureAuditorium("LC", labAuditorium.Capacity, labAuditorium.Engineers, 0, true);
+        }
+
 
         // Indexer
         public int this[Type auditoriumType]

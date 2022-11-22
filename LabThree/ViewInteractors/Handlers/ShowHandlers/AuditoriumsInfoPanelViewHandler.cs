@@ -1,4 +1,5 @@
 ﻿using LabTwo.View;
+using LabTwo.Warnings;
 
 namespace LabTwo.ViewInteractors.Handlers.ShowHandlers
 {
@@ -18,7 +19,16 @@ namespace LabTwo.ViewInteractors.Handlers.ShowHandlers
             itsMainWindow.showAuditorimsListView.Columns.Add("Capacity");
             itsMainWindow.showAuditorimsListView.Columns.Add("Engineers");
         }
-
+        public void ChangeAuditoriumType()
+        {
+            if (itsMainWindow.showAuditorimsListView.SelectedIndices.Count > 0)
+            {
+                itsMainWindow.universityToDisplay.ChangeAuditoriumType(itsMainWindow.showAuditorimsListView.SelectedIndices[0]);
+                UniversityView.ShowAuditoriumsInfo(itsMainWindow.universityToDisplay.Auditoriums, itsMainWindow.showAuditorimsListView);
+            }
+            else
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel2, itsMainWindow.warningTextBox2, new List<IWarning>() { new AuditoriumNotChosen() });
+        }
         public void ShowPanel()
         {
             itsMainWindow.showAuditoriumsPanel.Show();

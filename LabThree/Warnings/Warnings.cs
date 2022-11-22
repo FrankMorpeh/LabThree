@@ -160,4 +160,10 @@
 
         public string Text { get; private set; }
     }
+    public class AuditoriumNotChosen : IWarning
+    {
+        public AuditoriumNotChosen() { Text = "Auditorium is not chosen"; }
+
+        public string Text { get; private set; }
+    }
 }
