@@ -37,6 +37,7 @@ namespace LabThree.Controllers
         {
             return itsWorkerDictionary[passport];
         }
+        public bool WorkerHasSuchPassport(string passport) { return itsWorkerDictionary.ContainsKey(passport); }
 
         private void ToWorkerDictionary()
         {

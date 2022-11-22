@@ -41,7 +41,8 @@ namespace LabTwo.ViewInteractors.Handlers
         {
             List<IWarning> warnings = TeacherValidator.CheckTeacher(itsMainWindow.teacherNameTextBox.Text, itsMainWindow.teacherAgeTextBox.Text
                 , itsMainWindow.teacherPassportTextBox.Text, itsMainWindow.teacherNumberOfSubjectsTextBox.Text
-                , itsMainWindow.teacherNumberOfScientificWorksTextBox.Text);
+                , itsMainWindow.teacherNumberOfScientificWorksTextBox.Text
+                , itsTeacherInfoPanelFormStorage.Teachers.Exists(t => t.Passport == itsMainWindow.teacherPassportTextBox.Text));
             if (warnings.Count == 0)
             {
                 itsTeacherInfoPanelFormStorage.Teachers.Add(TeacherConverter.ToTeacher(itsMainWindow.teacherNameTextBox.Text

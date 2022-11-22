@@ -4,7 +4,8 @@ namespace LabTwo.Validators.TeacherValidators
 {
     public static class TeacherValidator
     {
-        public static List<IWarning> CheckTeacher(string name, string age, string passport, string numberOfSubjects, string numberOfScientificWorks)
+        public static List<IWarning> CheckTeacher(string name, string age, string passport, string numberOfSubjects, string numberOfScientificWorks
+            , bool universityHasWorkerWithSuchPassport)
         {
             List<IWarning> warnings = new List<IWarning>();
             if (CommonValidator.PersonNameIsValid(name) == false)
@@ -13,6 +14,8 @@ namespace LabTwo.Validators.TeacherValidators
                 warnings.Add(new IncorrectPersonAge());
             if (CommonValidator.WorkerPassportIsValid(passport) == false)
                 warnings.Add(new IncorrectPassport());
+            if (universityHasWorkerWithSuchPassport)
+                warnings.Add(new PassportAlreadyExists());
             if (NumberOfSubjectsIsCorrect(numberOfSubjects) == false)
                 warnings.Add(new IncorrectNumberOfSubjects());
             if (CommonValidator.NumberBiggerThanZero(numberOfScientificWorks) == false)

@@ -29,6 +29,19 @@ namespace LabTwo.ViewInteractors.Handlers.ShowHandlers
             else
                 WarningDisplayer.ShowWarning(itsMainWindow.warningPanel2, itsMainWindow.warningTextBox2, new List<IWarning>() { new AuditoriumNotChosen() });
         }
+        public void ShowSuitabilityOfAuditorium()
+        {
+            if (itsMainWindow.showAuditorimsListView.SelectedIndices.Count > 0)
+            {
+                if (itsMainWindow.universityToDisplay.AuditoriumIsSuitableForLessons(itsMainWindow.showAuditorimsListView.SelectedIndices[0]))
+                    itsMainWindow.warningTextBox2.Text = "Auditorium is suitable for lessons";
+                else
+                    itsMainWindow.warningTextBox2.Text = "Auditorium is not suitable for lessons";
+                itsMainWindow.warningPanel2.Show();
+            }
+            else
+                WarningDisplayer.ShowWarning(itsMainWindow.warningPanel2, itsMainWindow.warningTextBox2, new List<IWarning>() { new AuditoriumNotChosen() });
+        }
         public void ShowPanel()
         {
             itsMainWindow.showAuditoriumsPanel.Show();

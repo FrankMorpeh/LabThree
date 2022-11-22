@@ -53,7 +53,8 @@ namespace LabTwo.ViewInteractors.Handlers
         public void AddEngineer()
         {
             List<IWarning> warnings = EngineerValidator.CheckEngineer(itsMainWindow.engineerNameTextBox.Text, itsMainWindow.engineerAgeTextBox.Text
-                , itsMainWindow.engineerPassportTextBox.Text, ((string)itsMainWindow.engineerHasCertificateComboBox.SelectedItem));
+                , itsMainWindow.engineerPassportTextBox.Text, ((string)itsMainWindow.engineerHasCertificateComboBox.SelectedItem)
+                , itsEngineerInfoPanelFormStorage.Engineers.Exists(e => e.Passport == itsMainWindow.engineerPassportTextBox.Text));
             if (warnings.Count == 0)
             {
                 itsEngineerInfoPanelFormStorage.Engineers.Add(EngineerConverter.ToEngineer(itsMainWindow.engineerNameTextBox.Text

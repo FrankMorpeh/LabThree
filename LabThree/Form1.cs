@@ -299,5 +299,10 @@ namespace LabTwo
         {
             teachersInfoPanelViewHandler.ShowPotentialNumberOfSubjects();
         }
+
+        private void auditoriumIsSuitableForLessonsButton_Click(object sender, EventArgs e)
+        {
+            auditoriumsInfoPanelViewHandler.ShowSuitabilityOfAuditorium();
+        }
     }
 }

@@ -66,6 +66,7 @@ namespace LabTwo.Models.University
         // Workers 
         public void AddWorker(Worker worker) { itsWorkers.Add(worker); }
         public void RemoveWorkerAt(int index) { itsWorkers.RemoveAt(index); }
+        public bool WorkerHasSuchPassport(string passport) { return itsWorkers.WorkerHasSuchPassport(passport); }
 
         // Students
         public void AddStudent(Student student) { itsStudents.Add(student); }
@@ -88,6 +89,13 @@ namespace LabTwo.Models.University
         private LectureAuditorium ToLectureFromLab(LabAuditorium labAuditorium)
         {
             return new LectureAuditorium("LC", labAuditorium.Capacity, labAuditorium.Engineers, 0, true);
+        }
+        public bool AuditoriumIsSuitableForLessons(int auditoriumIndex)
+        {
+            if (itsAuditoriums[auditoriumIndex] is LabAuditorium)
+                return itsAuditoriums[auditoriumIndex].Engineers != null && itsAuditoriums[auditoriumIndex].Engineers.Count == 2;
+            else
+                return itsAuditoriums[auditoriumIndex].Engineers != null && itsAuditoriums[auditoriumIndex].Engineers.Count >= 1;
         }
 
         // Teachers

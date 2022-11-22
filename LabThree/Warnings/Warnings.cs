@@ -100,6 +100,12 @@
 
         public string Text { get; private set; }
     }
+    public class PassportAlreadyExists : IWarning
+    {
+        public PassportAlreadyExists() { Text = "Such passport already exists"; }
+
+        public string Text { get; private set; }
+    }
     public class IncorrectYearsWorking : IWarning
     {
         public IncorrectYearsWorking() { Text = "Working years should be bigger than zero"; }
