@@ -143,6 +143,7 @@
             this.showUniversityPanel = new System.Windows.Forms.Panel();
             this.showMainInfoAboutUniversityButton = new System.Windows.Forms.Button();
             this.showAuditoriumsPanel = new System.Windows.Forms.Panel();
+            this.auditoriumIsSuitableForLessonsButton = new System.Windows.Forms.Button();
             this.changeAuditoriumTypeButton = new System.Windows.Forms.Button();
             this.showAuditorimsListView = new System.Windows.Forms.ListView();
             this.showStudentsOfTeacherPanel = new System.Windows.Forms.Panel();
@@ -169,7 +170,6 @@
             this.showAuditoriumsOfUniversityButton = new System.Windows.Forms.Button();
             this.showTeachersOfUniversityButton = new System.Windows.Forms.Button();
             this.showDepartmentsOfUniversityButton = new System.Windows.Forms.Button();
-            this.auditoriumIsSuitableForLessonsButton = new System.Windows.Forms.Button();
             this.warningPanel3.SuspendLayout();
             this.warningPanel2.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -1353,6 +1353,16 @@
             this.showAuditoriumsPanel.Size = new System.Drawing.Size(635, 459);
             this.showAuditoriumsPanel.TabIndex = 12;
             // 
+            // auditoriumIsSuitableForLessonsButton
+            // 
+            this.auditoriumIsSuitableForLessonsButton.Location = new System.Drawing.Point(352, 379);
+            this.auditoriumIsSuitableForLessonsButton.Name = "auditoriumIsSuitableForLessonsButton";
+            this.auditoriumIsSuitableForLessonsButton.Size = new System.Drawing.Size(156, 53);
+            this.auditoriumIsSuitableForLessonsButton.TabIndex = 2;
+            this.auditoriumIsSuitableForLessonsButton.Text = "Check if suitable for lessons";
+            this.auditoriumIsSuitableForLessonsButton.UseVisualStyleBackColor = true;
+            this.auditoriumIsSuitableForLessonsButton.Click += new System.EventHandler(this.auditoriumIsSuitableForLessonsButton_Click);
+            // 
             // changeAuditoriumTypeButton
             // 
             this.changeAuditoriumTypeButton.Location = new System.Drawing.Point(149, 379);
@@ -1606,16 +1616,6 @@
             this.showDepartmentsOfUniversityButton.UseVisualStyleBackColor = true;
             this.showDepartmentsOfUniversityButton.Click += new System.EventHandler(this.showDepartmentsOfUniversityPanel_Click);
             // 
-            // auditoriumIsSuitableForLessonsButton
-            // 
-            this.auditoriumIsSuitableForLessonsButton.Location = new System.Drawing.Point(352, 379);
-            this.auditoriumIsSuitableForLessonsButton.Name = "auditoriumIsSuitableForLessonsButton";
-            this.auditoriumIsSuitableForLessonsButton.Size = new System.Drawing.Size(156, 53);
-            this.auditoriumIsSuitableForLessonsButton.TabIndex = 2;
-            this.auditoriumIsSuitableForLessonsButton.Text = "Check if suitable for lessons";
-            this.auditoriumIsSuitableForLessonsButton.UseVisualStyleBackColor = true;
-            this.auditoriumIsSuitableForLessonsButton.Click += new System.EventHandler(this.auditoriumIsSuitableForLessonsButton_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1629,6 +1629,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Shown);
             this.warningPanel3.ResumeLayout(false);
             this.warningPanel3.PerformLayout();

@@ -5,6 +5,8 @@ using LabTwo.Models.Departments;
 using LabThree.Controllers;
 using LabTwo.Models.Workers.Teachers;
 using System.Linq;
+using System.Text.Json.Serialization;
+using LabTwo.Models.Workers.Engineers;
 
 namespace LabTwo.Models.University
 {
@@ -15,6 +17,8 @@ namespace LabTwo.Models.University
         private double itsRank;
         private List<Department> itsDepartments;
         private WorkerController itsWorkers;
+        private List<Teacher> itsTeachers;
+        private List<Engineer> itsEngineers;
         private List<Student> itsStudents;
         private List<Auditorium> itsAuditoriums;
 
@@ -22,7 +26,19 @@ namespace LabTwo.Models.University
         public int FoundationYear { get { return itsFoundationYear; } set { itsFoundationYear = value; } }
         public double Rank { get { return itsRank; } set { itsRank = value; } }
         public List<Department> Departments { get { return itsDepartments; } set { itsDepartments = value; } }
-        public List<Worker> Workers { get { return itsWorkers.Workers; } set { itsWorkers.Workers = value; } }
+        public List<Teacher> Teachers { get { return itsTeachers; } set { itsTeachers = value; AddWorkersFromTeachers(); } } // for serialization
+        public List<Engineer> Engineers { get { return itsEngineers; } set { itsEngineers = value; AddWorkersFromEngineers(); } } // for serialization
+        [JsonIgnore]
+        public List<Worker> Workers 
+        { 
+            get { return itsWorkers.Workers; } 
+            set 
+            { 
+                itsWorkers.Workers = value;
+                Teachers = itsWorkers.Workers.OfType<Teacher>().ToList();
+                Engineers = itsWorkers.Workers.OfType<Engineer>().ToList();
+            } 
+        }
         public List<Student> Students { get { return itsStudents; } set { itsStudents = value; } }
         public List<Auditorium> Auditoriums { get { return itsAuditoriums; } set { itsAuditoriums = value; } }
 
@@ -32,9 +48,11 @@ namespace LabTwo.Models.University
             itsName = string.Empty;
             itsFoundationYear = 0;
             itsRank = 0;
-            itsWorkers = null;
-            itsStudents = null;
-            itsAuditoriums = null;
+            itsWorkers = new WorkerController();
+            itsTeachers = new List<Teacher>();
+            itsEngineers = new List<Engineer>();
+            itsStudents = new List<Student>();
+            itsAuditoriums = new List<Auditorium>();
         }
         public University(string name, int foundationYear, double rank, List<Department> departments, WorkerController workers
             , List<Student> students, List<Auditorium> auditoriums)
@@ -44,6 +62,8 @@ namespace LabTwo.Models.University
             itsRank = rank;
             itsDepartments = departments;
             itsWorkers = workers;
+            itsTeachers = itsWorkers.Workers.OfType<Teacher>().ToList();
+            itsEngineers = itsWorkers.Workers.OfType<Engineer>().ToList();
             itsStudents = students;
             itsAuditoriums = auditoriums;
         }
@@ -54,6 +74,8 @@ namespace LabTwo.Models.University
             itsRank = rhs.itsRank;
             itsDepartments = rhs.itsDepartments;
             itsWorkers = rhs.itsWorkers;
+            itsTeachers = itsWorkers.Workers.OfType<Teacher>().ToList();
+            itsEngineers = itsWorkers.Workers.OfType<Engineer>().ToList();
             itsStudents = rhs.itsStudents;
             itsAuditoriums = rhs.itsAuditoriums;
         }
@@ -67,6 +89,16 @@ namespace LabTwo.Models.University
         public void AddWorker(Worker worker) { itsWorkers.Add(worker); }
         public void RemoveWorkerAt(int index) { itsWorkers.RemoveAt(index); }
         public bool WorkerHasSuchPassport(string passport) { return itsWorkers.WorkerHasSuchPassport(passport); }
+        private void AddWorkersFromTeachers()
+        {
+            foreach (Teacher teacher in itsTeachers)
+                itsWorkers.Add(teacher);
+        }
+        private void AddWorkersFromEngineers()
+        {
+            foreach (Engineer engineer in itsEngineers)
+                itsWorkers.Add(engineer);
+        }
 
         // Students
         public void AddStudent(Student student) { itsStudents.Add(student); }

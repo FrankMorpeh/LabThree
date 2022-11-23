@@ -1,3 +1,4 @@
+using LabThree.Serialization;
 using LabTwo.Controllers;
 using LabTwo.Controllers.UniversityController;
 using LabTwo.Converters.UniversityConverters;
@@ -14,6 +15,8 @@ namespace LabTwo
 {
     public partial class Form1 : Form
     {
+        public static string initialLocation;
+
         public MainPanelHandler mainPanelHandler;
         public CombineUniversititesHandler combineUniversititesHandler;
         public MainInfoPanelHandler mainInfoPanelHandler;
@@ -38,12 +41,19 @@ namespace LabTwo
         public UniversityController universityController;
         public UniversityView universityView;
         public University universityToDisplay;
+        static Form1()
+        {
+            initialLocation = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            initialLocation = System.IO.Path.GetDirectoryName(initialLocation);
+        }
         public Form1()
         {
             InitializeComponent();
             InitializeExtraViewComponents();
 
-            universityController = new UniversityController();
+            universityController = UniversitySerializer.DeserializeUniversities();
+            if (universityController == null) // if deserialization isn't successful, then just create a controller
+                universityController = new UniversityController();
             universityView = new UniversityView(universityController);
 
             universityView.ShowPreviewInfo(universityComboBox);
@@ -71,6 +81,13 @@ namespace LabTwo
 
             panelController = new PanelController(this);
             showInfoPanelController = new ShowInfoPanelController(this);
+        }
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            mainPanelHandler.LoadUniversitiesToComboBox();
+            WarningDisplayer.CloseWarning(warningPanel, warningTextBox);
+            combineUniversitiesPanel.Hide();
+            addUniversityPanel.Hide();
         }
 
         private void addUniversityButton_Click(object sender, EventArgs e)
@@ -225,13 +242,6 @@ namespace LabTwo
             combineUniversititesHandler.ChooseFirstUniversityOrCombineBothUniversities();
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
-        {
-            WarningDisplayer.CloseWarning(warningPanel, warningTextBox);
-            combineUniversitiesPanel.Hide();
-            addUniversityPanel.Hide();
-        }
-
         private void openUniversityButton_Click(object sender, EventArgs e)
         {
             if (universityComboBox.SelectedIndex != -1)
@@ -303,6 +313,11 @@ namespace LabTwo
         private void auditoriumIsSuitableForLessonsButton_Click(object sender, EventArgs e)
         {
             auditoriumsInfoPanelViewHandler.ShowSuitabilityOfAuditorium();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UniversitySerializer.SerializeUniversities(universityController);
         }
     }
 }

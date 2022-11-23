@@ -1,4 +1,5 @@
 ﻿using LabTwo.Converters.UniversityConverters;
+using LabTwo.Models.University;
 
 namespace LabTwo.ViewInteractors.Handlers
 {
@@ -23,6 +24,12 @@ namespace LabTwo.ViewInteractors.Handlers
                 , itsMainWindow.auditoriumInfoPanelHandler.AuditoriumInfoPanelFormStorage.Auditoriums));
             itsMainWindow.universityComboBox.Items.Add(itsMainWindow.mainInfoPanelHandler.MainInfoPanelFormStorage.UniversityName);
             SetValuesToNull();
+        }
+        public void LoadUniversitiesToComboBox()
+        {
+            itsMainWindow.universityComboBox.Items.Clear();
+            foreach (University university in itsMainWindow.universityController.Universities)
+                itsMainWindow.universityComboBox.Items.Add(university.Name);
         }
         public void ShowPanel()
         {
