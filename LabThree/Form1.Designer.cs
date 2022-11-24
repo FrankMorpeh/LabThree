@@ -208,6 +208,32 @@
             this.menu.SuspendLayout();
             this.showWorkerByPassportPanel.SuspendLayout();
             this.SuspendLayout();
+
+            this.showUniversityPanel.Hide();
+            this.showMainInfoAboutUniversityPanel.Hide();
+            this.showInfoAboutDepartmentsPanel.Hide();
+            this.showTeacherPanel.Hide();
+            this.showStudentsOfTeacherPanel.Hide();
+            this.showAuditoriumsPanel.Hide();
+            this.showSubjectsOfDepartmentPanel.Hide();
+
+            this.warningPanel.Hide();
+            this.warningPanel2.Hide();
+            this.warningPanel3.Hide();
+
+            this.addUniversityPanel.Hide();
+            this.mainInfoPanel.Hide();
+            this.departmentsPanel.Hide();
+            this.engineersOfAuditoriumPanel.Hide();
+            this.engineerPanel.Hide();
+            this.auditoriumPanel.Hide();
+            this.studentsOfTeacherPanel.Hide();
+            this.studentsPanel.Hide();
+            this.teachersPanel.Hide();
+            this.subjectsPanel.Hide();
+
+            this.combineUniversitiesPanel.Hide();
+
             // 
             // warningPanel3
             // 
