@@ -22,7 +22,7 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.engineersOfAuditoriumListView.Columns.Clear();
             itsMainWindow.engineersOfAuditoriumListView.Columns.Add("Name");
             itsMainWindow.engineersOfAuditoriumListView.Columns.Add("Age");
-            itsMainWindow.engineersOfAuditoriumListView.Columns.Add("Salary");
+            itsMainWindow.engineersOfAuditoriumListView.Columns.Add("Passport");
             itsMainWindow.engineersOfAuditoriumListView.Columns.Add("Has certificate");
             itsMainWindow.engineersOfAuditoriumListView.Columns.Add("Working years");
         }

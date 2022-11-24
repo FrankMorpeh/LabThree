@@ -29,7 +29,7 @@ namespace LabTwo.Validators
                 return false;
             else
             {
-                if (Char.IsLetter(passport[0]) && Char.IsLetter(passport[0]))
+                if (Char.IsLetter(passport[0]) && Char.IsLetter(passport[1]))
                 {
                     for (int i = 2; i < passport.Length; i++)
                     {

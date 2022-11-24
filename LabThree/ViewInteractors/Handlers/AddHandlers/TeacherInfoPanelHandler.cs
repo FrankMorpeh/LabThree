@@ -27,7 +27,7 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.teachersListView.Columns.Clear();
             itsMainWindow.teachersListView.Columns.Add("Name");
             itsMainWindow.teachersListView.Columns.Add("Age");
-            itsMainWindow.teachersListView.Columns.Add("Salary");
+            itsMainWindow.teachersListView.Columns.Add("Passport");
             itsMainWindow.teachersListView.Columns.Add("Subjects' number");
             itsMainWindow.teachersListView.Columns.Add("Scientific works' number");
         }

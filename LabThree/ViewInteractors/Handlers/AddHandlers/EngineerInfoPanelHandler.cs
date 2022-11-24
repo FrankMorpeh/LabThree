@@ -26,7 +26,7 @@ namespace LabTwo.ViewInteractors.Handlers
             itsMainWindow.engineerListView.Columns.Clear();
             itsMainWindow.engineerListView.Columns.Add("Name");
             itsMainWindow.engineerListView.Columns.Add("Age");
-            itsMainWindow.engineerListView.Columns.Add("Salary");
+            itsMainWindow.engineerListView.Columns.Add("Passport");
             itsMainWindow.engineerListView.Columns.Add("Has certificate");
             itsMainWindow.engineerListView.Columns.Add("Years working");
         }
