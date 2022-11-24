@@ -35,7 +35,10 @@ namespace LabThree.Controllers
         }
         public Worker GetWorkerByPassport(string passport)
         {
-            return itsWorkerDictionary[passport];
+            if (itsWorkerDictionary.ContainsKey(passport))
+                return itsWorkerDictionary[passport];
+            else
+                return null;
         }
         public bool WorkerHasSuchPassport(string passport) { return itsWorkerDictionary.ContainsKey(passport); }
 

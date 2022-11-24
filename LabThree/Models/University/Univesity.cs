@@ -114,7 +114,6 @@ namespace LabTwo.Models.University
         // Workers 
         public void AddWorker(Worker worker) { itsWorkers.Add(worker); }
         public void RemoveWorkerAt(int index) { itsWorkers.RemoveAt(index); }
-        public bool WorkerHasSuchPassport(string passport) { return itsWorkers.WorkerHasSuchPassport(passport); }
         private void AddWorkersFromTeachers()
         {
             foreach (Teacher teacher in itsTeachers)
@@ -125,6 +124,14 @@ namespace LabTwo.Models.University
             foreach (Engineer engineer in itsEngineers)
                 itsWorkers.Add(engineer);
         }
+        public Worker GetWorkerByPassport(string passport)
+        {
+            if (WorkerHasSuchPassport(passport))
+                return itsWorkers.GetWorkerByPassport(passport);
+            else
+                return null;
+        }
+        private bool WorkerHasSuchPassport(string passport) { return itsWorkers.WorkerHasSuchPassport(passport); }
 
         // Students
         public void AddStudent(Student student) { itsStudents.Add(student); }

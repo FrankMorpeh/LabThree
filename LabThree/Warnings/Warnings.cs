@@ -172,4 +172,10 @@
 
         public string Text { get; private set; }
     }
+    public class NoWorkerWithSuchPassport : IWarning
+    {
+        public NoWorkerWithSuchPassport() { Text = "Worker with such passport doesn't exist"; }
+
+        public string Text { get; private set; }
+    }
 }

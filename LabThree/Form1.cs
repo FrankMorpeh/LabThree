@@ -1,4 +1,5 @@
 using LabThree.Serialization;
+using LabThree.ViewInteractors.Handlers.ShowHandlers;
 using LabTwo.Controllers;
 using LabTwo.Controllers.UniversityController;
 using LabTwo.Models.University;
@@ -32,6 +33,7 @@ namespace LabTwo
         public TeachersInfoPanelViewHandler teachersInfoPanelViewHandler;
         public StudentsOfTeacherInfoPanelViewHandler studentsOfTeacherInfoPanelViewHandler;
         public AuditoriumsInfoPanelViewHandler auditoriumsInfoPanelViewHandler;
+        public WorkerByPassportInfoPanelViewHandler workerByPassportInfoPanelViewHandler;
 
         public PanelController panelController;
         public ShowInfoPanelController showInfoPanelController;
@@ -75,6 +77,7 @@ namespace LabTwo
             teachersInfoPanelViewHandler = new TeachersInfoPanelViewHandler(this);
             studentsOfTeacherInfoPanelViewHandler = new StudentsOfTeacherInfoPanelViewHandler(this);
             auditoriumsInfoPanelViewHandler = new AuditoriumsInfoPanelViewHandler(this);
+            workerByPassportInfoPanelViewHandler = new WorkerByPassportInfoPanelViewHandler(this);
 
             panelController = new PanelController(this);
             showInfoPanelController = new ShowInfoPanelController(this);
@@ -336,6 +339,16 @@ namespace LabTwo
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     UniversitySerializer.SerializeUniversities(saveFileDialog.FileName, universityController);
             }
+        }
+
+        private void showWorkerByPassportButton_Click(object sender, EventArgs e)
+        {
+            showInfoPanelController.ShowPanel(workerByPassportInfoPanelViewHandler);
+        }
+
+        private void findWorkerByPassportButton_Click(object sender, EventArgs e)
+        {
+            workerByPassportInfoPanelViewHandler.ShowWorkerByPassport();
         }
     }
 }

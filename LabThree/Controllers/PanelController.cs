@@ -12,7 +12,7 @@ namespace LabTwo.Controllers
                 , mainWindow.mainInfoPanelHandler, mainWindow.departmentsInfoPanelHandler
                 , mainWindow.subjectsInfoPanelHandler, mainWindow.studentsInfoPanelHandler, mainWindow.teacherInfoPanelHandler
                 , mainWindow.studentsOfTeacherInfoPanelHandler, mainWindow.engineerInfoPanelHandler, mainWindow.auditoriumInfoPanelHandler
-                , mainWindow.engineersOfAuditoriumInfoPanelHandler };
+                , mainWindow.engineersOfAuditoriumInfoPanelHandler, mainWindow.workerByPassportInfoPanelViewHandler };
         }
 
         public void ShowPanel(IPanelHandler panelHandler)

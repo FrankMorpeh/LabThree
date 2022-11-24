@@ -170,6 +170,19 @@
             this.showAuditoriumsOfUniversityButton = new System.Windows.Forms.Button();
             this.showTeachersOfUniversityButton = new System.Windows.Forms.Button();
             this.showDepartmentsOfUniversityButton = new System.Windows.Forms.Button();
+            this.menu = new System.Windows.Forms.MenuStrip();
+            this.menuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showWorkerByPassportButton = new System.Windows.Forms.Button();
+            this.showWorkerByPassportPanel = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.showWorkerByPassportTextBox = new System.Windows.Forms.TextBox();
+            this.findWorkerByPassportButton = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.showPassportOfWorkerLabel = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.showNameOfWorkerLabel = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.showAgeOfWorkerLabel = new System.Windows.Forms.Label();
             this.warningPanel3.SuspendLayout();
             this.warningPanel2.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -192,15 +205,9 @@
             this.showSubjectsOfDepartmentPanel.SuspendLayout();
             this.showInfoAboutDepartmentsPanel.SuspendLayout();
             this.showMainInfoAboutUniversityPanel.SuspendLayout();
+            this.menu.SuspendLayout();
+            this.showWorkerByPassportPanel.SuspendLayout();
             this.SuspendLayout();
-
-            // Menu
-            MenuStrip menu = new MenuStrip();
-            ToolStripMenuItem menuItem = new ToolStripMenuItem("Open");
-            menuItem.Click += new EventHandler(menuOpen_Click);
-            menu.Items.Add(menuItem);
-            this.Controls.Add(menu);
-
             // 
             // warningPanel3
             // 
@@ -1325,6 +1332,7 @@
             // showUniversityPanel
             // 
             this.showUniversityPanel.Controls.Add(this.warningPanel2);
+            this.showUniversityPanel.Controls.Add(this.showWorkerByPassportPanel);
             this.showUniversityPanel.Controls.Add(this.showMainInfoAboutUniversityButton);
             this.showUniversityPanel.Controls.Add(this.showAuditoriumsPanel);
             this.showUniversityPanel.Controls.Add(this.showStudentsOfTeacherPanel);
@@ -1336,6 +1344,7 @@
             this.showUniversityPanel.Controls.Add(this.showAuditoriumsOfUniversityButton);
             this.showUniversityPanel.Controls.Add(this.showTeachersOfUniversityButton);
             this.showUniversityPanel.Controls.Add(this.showDepartmentsOfUniversityButton);
+            this.showUniversityPanel.Controls.Add(this.showWorkerByPassportButton);
             this.showUniversityPanel.Location = new System.Drawing.Point(5, 3);
             this.showUniversityPanel.Name = "showUniversityPanel";
             this.showUniversityPanel.Size = new System.Drawing.Size(885, 531);
@@ -1596,7 +1605,7 @@
             // 
             // showAuditoriumsOfUniversityButton
             // 
-            this.showAuditoriumsOfUniversityButton.Location = new System.Drawing.Point(20, 289);
+            this.showAuditoriumsOfUniversityButton.Location = new System.Drawing.Point(20, 330);
             this.showAuditoriumsOfUniversityButton.Name = "showAuditoriumsOfUniversityButton";
             this.showAuditoriumsOfUniversityButton.Size = new System.Drawing.Size(123, 54);
             this.showAuditoriumsOfUniversityButton.TabIndex = 5;
@@ -1606,7 +1615,7 @@
             // 
             // showTeachersOfUniversityButton
             // 
-            this.showTeachersOfUniversityButton.Location = new System.Drawing.Point(20, 203);
+            this.showTeachersOfUniversityButton.Location = new System.Drawing.Point(20, 255);
             this.showTeachersOfUniversityButton.Name = "showTeachersOfUniversityButton";
             this.showTeachersOfUniversityButton.Size = new System.Drawing.Size(123, 54);
             this.showTeachersOfUniversityButton.TabIndex = 3;
@@ -1616,7 +1625,7 @@
             // 
             // showDepartmentsOfUniversityButton
             // 
-            this.showDepartmentsOfUniversityButton.Location = new System.Drawing.Point(20, 113);
+            this.showDepartmentsOfUniversityButton.Location = new System.Drawing.Point(20, 181);
             this.showDepartmentsOfUniversityButton.Name = "showDepartmentsOfUniversityButton";
             this.showDepartmentsOfUniversityButton.Size = new System.Drawing.Size(123, 54);
             this.showDepartmentsOfUniversityButton.TabIndex = 1;
@@ -1624,11 +1633,139 @@
             this.showDepartmentsOfUniversityButton.UseVisualStyleBackColor = true;
             this.showDepartmentsOfUniversityButton.Click += new System.EventHandler(this.showDepartmentsOfUniversityPanel_Click);
             // 
+            // menu
+            // 
+            this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItem});
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(891, 28);
+            this.menu.TabIndex = 0;
+            // 
+            // menuItem
+            // 
+            this.menuItem.Name = "menuItem";
+            this.menuItem.Size = new System.Drawing.Size(59, 24);
+            this.menuItem.Text = "Open";
+            this.menuItem.Click += new System.EventHandler(this.menuOpen_Click);
+            // 
+            // showWorkerByPassportButton
+            // 
+            this.showWorkerByPassportButton.Location = new System.Drawing.Point(20, 106);
+            this.showWorkerByPassportButton.Name = "showWorkerByPassportButton";
+            this.showWorkerByPassportButton.Size = new System.Drawing.Size(123, 54);
+            this.showWorkerByPassportButton.TabIndex = 13;
+            this.showWorkerByPassportButton.Text = "Worker by passport";
+            this.showWorkerByPassportButton.UseVisualStyleBackColor = true;
+            this.showWorkerByPassportButton.Click += new System.EventHandler(this.showWorkerByPassportButton_Click);
+            // 
+            // showWorkerByPassportPanel
+            // 
+            this.showWorkerByPassportPanel.Controls.Add(this.showAgeOfWorkerLabel);
+            this.showWorkerByPassportPanel.Controls.Add(this.label42);
+            this.showWorkerByPassportPanel.Controls.Add(this.showNameOfWorkerLabel);
+            this.showWorkerByPassportPanel.Controls.Add(this.label32);
+            this.showWorkerByPassportPanel.Controls.Add(this.showPassportOfWorkerLabel);
+            this.showWorkerByPassportPanel.Controls.Add(this.label31);
+            this.showWorkerByPassportPanel.Controls.Add(this.findWorkerByPassportButton);
+            this.showWorkerByPassportPanel.Controls.Add(this.showWorkerByPassportTextBox);
+            this.showWorkerByPassportPanel.Controls.Add(this.label30);
+            this.showWorkerByPassportPanel.Location = new System.Drawing.Point(187, 34);
+            this.showWorkerByPassportPanel.Name = "showWorkerByPassportPanel";
+            this.showWorkerByPassportPanel.Size = new System.Drawing.Size(672, 446);
+            this.showWorkerByPassportPanel.TabIndex = 14;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label30.Location = new System.Drawing.Point(32, 40);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(172, 32);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "Input passport:";
+            // 
+            // showWorkerByPassportTextBox
+            // 
+            this.showWorkerByPassportTextBox.Location = new System.Drawing.Point(210, 46);
+            this.showWorkerByPassportTextBox.Name = "showWorkerByPassportTextBox";
+            this.showWorkerByPassportTextBox.Size = new System.Drawing.Size(172, 27);
+            this.showWorkerByPassportTextBox.TabIndex = 1;
+            // 
+            // findWorkerByPassportButton
+            // 
+            this.findWorkerByPassportButton.Location = new System.Drawing.Point(41, 98);
+            this.findWorkerByPassportButton.Name = "findWorkerByPassportButton";
+            this.findWorkerByPassportButton.Size = new System.Drawing.Size(113, 45);
+            this.findWorkerByPassportButton.TabIndex = 2;
+            this.findWorkerByPassportButton.Text = "Find";
+            this.findWorkerByPassportButton.UseVisualStyleBackColor = true;
+            this.findWorkerByPassportButton.Click += new System.EventHandler(this.findWorkerByPassportButton_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label31.Location = new System.Drawing.Point(41, 209);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(107, 32);
+            this.label31.TabIndex = 3;
+            this.label31.Text = "Passport:";
+            // 
+            // showPassportOfWorkerLabel
+            // 
+            this.showPassportOfWorkerLabel.AutoSize = true;
+            this.showPassportOfWorkerLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.showPassportOfWorkerLabel.Location = new System.Drawing.Point(154, 209);
+            this.showPassportOfWorkerLabel.Name = "showPassportOfWorkerLabel";
+            this.showPassportOfWorkerLabel.Size = new System.Drawing.Size(0, 32);
+            this.showPassportOfWorkerLabel.TabIndex = 4;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label32.Location = new System.Drawing.Point(41, 255);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(83, 32);
+            this.label32.TabIndex = 5;
+            this.label32.Text = "Name:";
+            // 
+            // showNameOfWorkerLabel
+            // 
+            this.showNameOfWorkerLabel.AutoSize = true;
+            this.showNameOfWorkerLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.showNameOfWorkerLabel.Location = new System.Drawing.Point(130, 255);
+            this.showNameOfWorkerLabel.Name = "showNameOfWorkerLabel";
+            this.showNameOfWorkerLabel.Size = new System.Drawing.Size(0, 32);
+            this.showNameOfWorkerLabel.TabIndex = 6;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label42.Location = new System.Drawing.Point(41, 303);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(61, 32);
+            this.label42.TabIndex = 7;
+            this.label42.Text = "Age:";
+            // 
+            // showAgeOfWorkerLabel
+            // 
+            this.showAgeOfWorkerLabel.AutoSize = true;
+            this.showAgeOfWorkerLabel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.showAgeOfWorkerLabel.Location = new System.Drawing.Point(108, 304);
+            this.showAgeOfWorkerLabel.Name = "showAgeOfWorkerLabel";
+            this.showAgeOfWorkerLabel.Size = new System.Drawing.Size(0, 32);
+            this.showAgeOfWorkerLabel.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(891, 537);
+            this.Controls.Add(this.menu);
             this.Controls.Add(this.showUniversityPanel);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -1674,7 +1811,12 @@
             this.showInfoAboutDepartmentsPanel.ResumeLayout(false);
             this.showMainInfoAboutUniversityPanel.ResumeLayout(false);
             this.showMainInfoAboutUniversityPanel.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
+            this.showWorkerByPassportPanel.ResumeLayout(false);
+            this.showWorkerByPassportPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1823,5 +1965,18 @@
         public Button changeAuditoriumTypeButton;
         public Button showTeacherNumberOfPotentialSubjectsButton;
         public Button auditoriumIsSuitableForLessonsButton;
+        private MenuStrip menu;
+        private ToolStripMenuItem menuItem;
+        public Button showWorkerByPassportButton;
+        public Panel showWorkerByPassportPanel;
+        public Label label31;
+        public Button findWorkerByPassportButton;
+        public TextBox showWorkerByPassportTextBox;
+        public Label label30;
+        public Label showAgeOfWorkerLabel;
+        public Label label42;
+        public Label showNameOfWorkerLabel;
+        private Label label32;
+        public Label showPassportOfWorkerLabel;
     }
 }
