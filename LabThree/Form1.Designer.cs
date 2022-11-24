@@ -193,6 +193,14 @@
             this.showInfoAboutDepartmentsPanel.SuspendLayout();
             this.showMainInfoAboutUniversityPanel.SuspendLayout();
             this.SuspendLayout();
+
+            // Menu
+            MenuStrip menu = new MenuStrip();
+            ToolStripMenuItem menuItem = new ToolStripMenuItem("Open");
+            menuItem.Click += new EventHandler(menuOpen_Click);
+            menu.Items.Add(menuItem);
+            this.Controls.Add(menu);
+
             // 
             // warningPanel3
             // 

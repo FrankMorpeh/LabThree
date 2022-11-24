@@ -6,36 +6,26 @@ namespace LabThree.Serialization
 {
     public static class UniversitySerializer
     {
-        public static void SerializeUniversities(UniversityController universityController)
+        public static void SerializeUniversities(string fileName, UniversityController universityController)
         {
-            if (!Directory.Exists(Form1.initialLocation + "\\University")) // create directory 'University' if it doesn't exist
-                Directory.CreateDirectory(Form1.initialLocation + "\\University");
             try
             {
                 string serializedUniversityController = JsonSerializer.Serialize(universityController);
-                File.WriteAllText(Form1.initialLocation + "\\University\\UniversityController.json", serializedUniversityController);
+                File.WriteAllText(fileName, serializedUniversityController);
             }
             catch (Exception) {}
         }
-        public static UniversityController DeserializeUniversities()
+        public static UniversityController DeserializeUniversities(string fileName)
         {
-            if (!Directory.Exists(Form1.initialLocation + "\\University")) // if the directory doesn't exist, just create it for the future and return null
+            try
             {
-                Directory.CreateDirectory(Form1.initialLocation + "\\University");
-                return null;
+                FileStream fileStream = new FileStream(fileName, FileMode.Open);
+                UniversityController universityController = JsonSerializer.Deserialize<UniversityController>(fileStream);
+                return universityController;
             }
-            else
+            catch (Exception)
             {
-                try
-                {
-                    FileStream fileStream = new FileStream(Form1.initialLocation + "\\University\\UniversityController.json", FileMode.Open);
-                    UniversityController universityController = JsonSerializer.Deserialize<UniversityController>(fileStream);
-                    return universityController;
-                }
-                catch (Exception) 
-                {
-                    return null;
-                }
+                return null;
             }
         }
     }

@@ -1,15 +1,12 @@
 using LabThree.Serialization;
 using LabTwo.Controllers;
 using LabTwo.Controllers.UniversityController;
-using LabTwo.Converters.UniversityConverters;
-using LabTwo.Models.Auditoriums;
 using LabTwo.Models.University;
-using LabTwo.Models.Workers;
-using LabTwo.Models.Workers.Teachers;
 using LabTwo.View;
 using LabTwo.ViewInteractors.Handlers;
 using LabTwo.ViewInteractors.Handlers.ShowHandlers;
 using LabTwo.Warnings;
+using System.Windows.Forms;
 
 namespace LabTwo
 {
@@ -51,9 +48,9 @@ namespace LabTwo
             InitializeComponent();
             InitializeExtraViewComponents();
 
-            universityController = UniversitySerializer.DeserializeUniversities();
-            if (universityController == null) // if deserialization isn't successful, then just create a controller
-                universityController = new UniversityController();
+            //universityController = UniversitySerializer.DeserializeUniversities();
+            //if (universityController == null) // if deserialization isn't successful, then just create a controller
+            universityController = new UniversityController();
             universityView = new UniversityView(universityController);
 
             universityView.ShowPreviewInfo(universityComboBox);
@@ -84,10 +81,22 @@ namespace LabTwo
         }
         private void Form1_Shown(object sender, EventArgs e)
         {
-            mainPanelHandler.LoadUniversitiesToComboBox();
             WarningDisplayer.CloseWarning(warningPanel, warningTextBox);
             combineUniversitiesPanel.Hide();
             addUniversityPanel.Hide();
+        }
+
+        private void menuOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Json Files (*.json)|*.json";
+            openFileDialog.InitialDirectory = Form1.initialLocation;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                universityController = UniversitySerializer.DeserializeUniversities(openFileDialog.FileName);
+                universityView = new UniversityView(universityController);
+                mainPanelHandler.LoadUniversitiesToComboBox();
+            }
         }
 
         private void addUniversityButton_Click(object sender, EventArgs e)
@@ -317,7 +326,16 @@ namespace LabTwo
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            UniversitySerializer.SerializeUniversities(universityController);
+            DialogResult dialogResult = MessageBox.Show("Do you want to save progress before quitting?", "Exit"
+                , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Json Files (*.json)|*.json";
+                saveFileDialog.InitialDirectory = Form1.initialLocation;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    UniversitySerializer.SerializeUniversities(saveFileDialog.FileName, universityController);
+            }
         }
     }
 }
