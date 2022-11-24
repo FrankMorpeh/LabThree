@@ -21,6 +21,8 @@ namespace LabTwo.Models.University
         private List<Engineer> itsEngineers;
         private List<Student> itsStudents;
         private List<Auditorium> itsAuditoriums;
+        private List<LectureAuditorium> itsLectureAuditoriums;
+        private List<LabAuditorium> itsLabAuditoriums;
 
         public string Name { get { return itsName; } set { itsName = value; } }
         public int FoundationYear { get { return itsFoundationYear; } set { itsFoundationYear = value; } }
@@ -40,7 +42,27 @@ namespace LabTwo.Models.University
             } 
         }
         public List<Student> Students { get { return itsStudents; } set { itsStudents = value; } }
-        public List<Auditorium> Auditoriums { get { return itsAuditoriums; } set { itsAuditoriums = value; } }
+        public List<LectureAuditorium> LectureAuditoriums 
+        { 
+            get { return itsLectureAuditoriums; } 
+            set { itsLectureAuditoriums = value; AddAuditoriumsFromLectureAuditoriums(); } 
+        }
+        public List<LabAuditorium> LabAuditoriums 
+        { 
+            get { return itsLabAuditoriums; }
+            set { itsLabAuditoriums = value; AddAuditoriumsFromLabAuditoriums(); }
+        }
+        [JsonIgnore]
+        public List<Auditorium> Auditoriums 
+        { 
+            get { return itsAuditoriums; } 
+            set 
+            { 
+                itsAuditoriums = value;
+                itsLectureAuditoriums = itsAuditoriums.OfType<LectureAuditorium>().ToList();
+                itsLabAuditoriums = itsAuditoriums.OfType<LabAuditorium>().ToList();
+            } 
+        }
 
 
         public University()
@@ -66,6 +88,8 @@ namespace LabTwo.Models.University
             itsEngineers = itsWorkers.Workers.OfType<Engineer>().ToList();
             itsStudents = students;
             itsAuditoriums = auditoriums;
+            itsLectureAuditoriums = itsAuditoriums.OfType<LectureAuditorium>().ToList();
+            itsLabAuditoriums = itsAuditoriums.OfType<LabAuditorium>().ToList();
         }
         public University(University rhs)
         {
@@ -78,6 +102,8 @@ namespace LabTwo.Models.University
             itsEngineers = itsWorkers.Workers.OfType<Engineer>().ToList();
             itsStudents = rhs.itsStudents;
             itsAuditoriums = rhs.itsAuditoriums;
+            itsLectureAuditoriums = rhs.itsLectureAuditoriums;
+            itsLabAuditoriums = rhs.itsLabAuditoriums;
         }
 
         
@@ -128,6 +154,16 @@ namespace LabTwo.Models.University
                 return itsAuditoriums[auditoriumIndex].Engineers != null && itsAuditoriums[auditoriumIndex].Engineers.Count == 2;
             else
                 return itsAuditoriums[auditoriumIndex].Engineers != null && itsAuditoriums[auditoriumIndex].Engineers.Count >= 1;
+        }
+        private void AddAuditoriumsFromLectureAuditoriums()
+        {
+            foreach (LectureAuditorium lectureAuditorium in itsLectureAuditoriums)
+                itsAuditoriums.Add(lectureAuditorium);
+        }
+        private void AddAuditoriumsFromLabAuditoriums()
+        {
+            foreach (LabAuditorium labAuditorium in itsLabAuditoriums)
+                itsAuditoriums.Add(labAuditorium);
         }
 
         // Teachers
